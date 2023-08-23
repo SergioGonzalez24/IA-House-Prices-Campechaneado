@@ -2,10 +2,8 @@
 
 <div align="center">
   
-![GitHub Org's stars](https://img.shields.io/github/stars/camilafernanda?style=social)
 ![En Desarollo](https://img.shields.io/badge/STATUS-EN%20DESAROLLO-green)
 ![PyPI](https://img.shields.io/pypi/v/customtkinter)
-![Downloads](https://static.pepy.tech/personalized-badge/customtkinter?period=total&units=international_system&left_color=grey&right_color=green&left_text=downloads)
 
 </div>
 
