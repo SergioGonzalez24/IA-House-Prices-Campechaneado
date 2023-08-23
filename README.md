@@ -22,6 +22,6 @@
 *[Conclusión](#conclusión)
 
 
-<h4 align="center">
+<h2 align="center">
 :construction: Proyecto en construcción :construction:
-</h4>
+</h2>
