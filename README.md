@@ -2,7 +2,7 @@
 
 <div align="center">
 
-<img src="https://img.shields.io/badge/STATUS-EN%20DESAROLLO-green">
+![En Desarollo](https://img.shields.io/badge/STATUS-EN%20DESAROLLO-green)
 ![PyPI](https://img.shields.io/pypi/v/customtkinter)
 ![PyPI - Downloads](https://img.shields.io/pypi/dm/customtkinter?color=green&label=downloads)
 ![Downloads](https://static.pepy.tech/personalized-badge/customtkinter?period=total&units=international_system&left_color=grey&right_color=green&left_text=downloads)
