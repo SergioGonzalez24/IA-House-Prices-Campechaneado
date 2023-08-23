@@ -1,17 +1,20 @@
 <h1 align="center"> IA-House-Prices-Campechaneado </h1> 
 
 <div align="center">
-
+  
+![GitHub Org's stars](https://img.shields.io/github/stars/camilafernanda?style=social)
 ![En Desarollo](https://img.shields.io/badge/STATUS-EN%20DESAROLLO-green)
 ![PyPI](https://img.shields.io/pypi/v/customtkinter)
-![PyPI - Downloads](https://img.shields.io/pypi/dm/customtkinter?color=green&label=downloads)
 ![Downloads](https://static.pepy.tech/personalized-badge/customtkinter?period=total&units=international_system&left_color=grey&right_color=green&left_text=downloads)
-![PyPI - License](https://img.shields.io/badge/license_MIT)
-![](https://tokei.rs/b1/github/tomschimansky/customtkinter)
 
 </div>
 
-![GitHub Org's stars](https://img.shields.io/github/stars/camilafernanda?style=social)
+<h2 align="center">
+:construction: Proyecto en construcción :construction:
+</h2>
+
+Bienvenido al repositorio del proyecto de ventas de casas. Este proyecto tiene como objetivo crear una plataforma para la gestión de ventas de propiedades inmobiliarias, facilitando a los usuarios la búsqueda y compra de casas de manera eficiente.
+
 
 ##Índice
 
@@ -29,24 +32,55 @@
 *[Conclusión](#conclusión)
 
 
-<h2 align="center">
-:construction: Proyecto en construcción :construction:
-</h2>
+## Características
 
+- `Funcionalidad 1`: Búsqueda avanzada de propiedades por ubicación, precio, tamaño y características.
+- `Funcionalidad 2`: Detalles completos de cada propiedad, incluyendo fotos y descripciones.
+- `Funcionalidad 3`: Formulario de contacto para solicitar más información sobre una propiedad.
+- `Funcionalidad 4`: Panel de administración para agentes inmobiliarios:
+  - Agregar nuevas propiedades con detalles completos.
+  - Actualizar el estado de las propiedades (disponible, en proceso, vendida, etc.).
+  - Responder a las consultas de los clientes.
 
-## :hammer:Funcionalidades del proyecto
+## Capturas de Pantalla
 
-- `Funcionalidad 1`: descripción de la funcionalidad 
-- `Funcionalidad 2`: descripción de la funcionalidad 
-- `Funcionalidad 2a`: descripción de la funcionalidade 2a relacionada con la funcionalidad 
-- `Funcionalidad 3`: descripción de la funcionalidad 3
+![Captura de Pantalla 1](screenshots/screenshot1.png)
+*Descripción de la captura de pantalla 1.*
 
+![Captura de Pantalla 2](screenshots/screenshot2.png)
+*Descripción de la captura de pantalla 2.*
 
+## Tecnologías Utilizadas
 
-📁 Acceso al proyecto
+- Frontend: HTML, CSS, JavaScript (con posibilidad de frameworks como React, Vue, etc.).
+- Backend: Node.js y Express.js para la creación de la API.
+- Base de Datos: MySQL para el almacenamiento de datos de propiedades y usuarios.
+- Otras herramientas: Git para control de versiones, Webpack para empaquetado.
 
-**Indica cómo se puede descargar o acceder al código fuente del proyecto, ya sea proyecto inicial o final**
+## Instalación
 
-🛠️ Abre y ejecuta el proyecto
+1. Clona este repositorio: `git clone https://github.com/tuusuario/ventas-de-casas.git`
+2. Navega al directorio del proyecto: `cd ventas-de-casas`
+3. Instala las dependencias del backend: `npm install`
+4. Navega a la carpeta del frontend: `cd frontend`
+5. Instala las dependencias del frontend: `npm install`
 
-**Muestra las instrucciones necesarias para abrir y ejecutar el proyecto**
+## Configuración
+
+- Configura la base de datos en `backend/config/database.js`.
+- Configura las variables de entorno en un archivo `.env` para mantener la información sensible segura.
+
+## Uso
+
+1. Inicia el servidor backend: `npm run start` en el directorio `backend`.
+2. Inicia la aplicación frontend: `npm run start` en el directorio `frontend`.
+3. Abre tu navegador y visita: `http://localhost:3000`.
+
+## Contribuciones
+
+¡Las contribuciones son bienvenidas! Si encuentras algún error o tienes alguna mejora, siéntete libre de abrir un problema o enviar una solicitud de extracción.
+
+## Licencia
+
+Este proyecto está bajo la Licencia MIT. Consulta el archivo [LICENSE](LICENSE) para más detalles.
+
