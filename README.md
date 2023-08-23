@@ -1,4 +1,22 @@
 <h1 align="center"> IA-House-Prices-Campechaneado </h1> 
-<h![Dinosaurio constructor](https://github.com/SergioGonzalez24/IA-House-Prices-Campechaneado/assets/125308898/c77bd420-a67f-4b97-9e16-e7a807722419)
 
-![Badge en Desarollo](https://img.shields.io/badge/STATUS-EN%20DESAROLLO-green)
+<p align="left">
+<img src="https://img.shields.io/badge/STATUS-EN%20DESAROLLO-green">
+</p>
+
+![GitHub Org's stars](https://img.shields.io/github/stars/camilafernanda?style=social)
+
+##Índice
+
+*[Título e imagen de portada](#Título-e-imagen-de-portada)
+*[Insignias](#insignias)
+*[Índice](#índice)
+*[Descripción del proyecto](#descripción-del-proyecto)
+*[Estado del proyecto](#Estado-del-proyecto)
+*[Características de la aplicación y demostración](#Características-de-la-aplicación-y-demostración)
+*[Acceso al proyecto](#acceso-proyecto)
+*[Tecnologías utilizadas](#tecnologías-utilizadas)
+*[Personas Contribuyentes](#personas-contribuyentes)
+*[Personas-Desarrolladores del Proyecto](#personas-desarrolladores)
+* [Licencia](#licencia)
+*[Conclusión](#conclusión)
