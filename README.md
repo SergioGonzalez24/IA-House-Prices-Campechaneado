@@ -29,7 +29,7 @@
 
 ## :hammer:Funcionalidades del proyecto
 
-`Funcionalidad 1`: descripción de la funcionalidad 
-`Funcionalidad 2`: descripción de la funcionalidad 
-`Funcionalidad 2a`: descripción de la funcionalidade 2a relacionada con la funcionalidad 
-`Funcionalidad 3`: descripción de la funcionalidad 3
+- `Funcionalidad 1`: descripción de la funcionalidad 
+- `Funcionalidad 2`: descripción de la funcionalidad 
+- `Funcionalidad 2a`: descripción de la funcionalidade 2a relacionada con la funcionalidad 
+- `Funcionalidad 3`: descripción de la funcionalidad 3
