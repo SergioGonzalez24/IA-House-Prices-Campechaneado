@@ -28,7 +28,7 @@ class MyWebView extends StatelessWidget {
         title: const Text('Mi Aplicación Web'),
       ),
       body: const WebView(
-        initialUrl: 'https://nextjs.org/docs',
+        initialUrl: 'https://campechaneado.vercel.app/',
         javascriptMode:
             JavascriptMode.unrestricted, // Habilita la ejecución de JavaScript
       ),
