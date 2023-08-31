@@ -25,7 +25,7 @@ class MyWebView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Mi Aplicación Web'),
+        title: const Text('Campechanos'),
       ),
       body: const WebView(
         initialUrl: 'https://campechaneado.vercel.app/',
