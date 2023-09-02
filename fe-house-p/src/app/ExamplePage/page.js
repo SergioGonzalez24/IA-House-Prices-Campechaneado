@@ -6,19 +6,15 @@ import { ExampleMuiUi } from "@/components/ExampleMuiUi";
 export default function ExamplePage() {
   return (
     <>
-      <div>
-        <h1>Ejemplo JOI UI</h1>
+      <div class="flex flex-col items-center justify-center h-screen">
+        <h1 class="text-2xl mb-4">Ejemplo JOI UI</h1>
         <ExampleComponent />
       </div>
-
-      <br />
-      <br />
-
-      <div>
-        <h1>Ejemplo MUI UI</h1>
+      
+      <div class="flex flex-col items-center justify-center h-screen">
+        <h1 class="text-2xl mb-4">Ejemplo MUI UI</h1>
         <ExampleMuiUi />
       </div>
-      
     </>
   );
-} 
+}

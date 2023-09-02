@@ -2,6 +2,8 @@
 // Ejemplo de creacion de componente incorporando la libreria de diseño JOI UI
 // https://mui.com/joy-ui/getting-started/tutorial/
 
+'use client';
+
 import Table from '@mui/joy/Table';
 
 export default function ExampleComponent() {

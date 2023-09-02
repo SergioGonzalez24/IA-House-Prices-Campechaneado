@@ -28,7 +28,7 @@ class MyWebView extends StatelessWidget {
         title: const Text('Campechanos'),
       ),
       body: const WebView(
-        initialUrl: 'https://campechaneado.vercel.app/',
+        initialUrl: 'http://localhost:3000/HomeMovilNavbar',
         javascriptMode:
             JavascriptMode.unrestricted, // Habilita la ejecución de JavaScript
       ),
