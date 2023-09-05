@@ -25,10 +25,10 @@ class MyWebView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Mi Aplicación Web'),
+        title: const Text('Campechanos'),
       ),
       body: const WebView(
-        initialUrl: 'https://nextjs.org/docs',
+        initialUrl: 'http://localhost:3000/HomeMovilNavbar',
         javascriptMode:
             JavascriptMode.unrestricted, // Habilita la ejecución de JavaScript
       ),
