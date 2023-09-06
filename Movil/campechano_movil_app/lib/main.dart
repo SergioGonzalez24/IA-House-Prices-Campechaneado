@@ -1,3 +1,5 @@
+import 'dart:io' show Platform; // Importa la clase Platform
+
 import 'package:flutter/material.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
@@ -8,12 +10,9 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Mi Aplicación Web',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: const MyWebView(),
+    return const MaterialApp(
+      debugShowCheckedModeBanner: false, // Oculta el banner de debug
+      home: MyWebView(),
     );
   }
 }
@@ -23,12 +22,19 @@ class MyWebView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // Determina la altura de la barra de herramientas según la plataforma
+    double toolbarHeight = Platform.isIOS ? 0 : 10;
+
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Campechanos'),
+        toolbarHeight:
+            toolbarHeight, // Establece la altura de la barra de herramientas
+        elevation: 0,
+        backgroundColor: Colors.black,
       ),
       body: const WebView(
-        initialUrl: 'http://localhost:3000/HomeMovilNavbar',
+        initialUrl:
+            'http://localhost:3000/HomeMovilNavbar', // Cambiar a la URL de la aplicación
         javascriptMode:
             JavascriptMode.unrestricted, // Habilita la ejecución de JavaScript
       ),
