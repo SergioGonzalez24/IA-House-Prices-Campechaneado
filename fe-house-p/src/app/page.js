@@ -1,7 +1,11 @@
+import { meme } from '@/assets/images/'
 export default function Home() {
   return (
     <>
-      <h1>Campechanos app</h1>
+      <div>
+        <br />
+        <img src={ meme.src } alt='meme' />
+      </div>
     </>
   )
 }
