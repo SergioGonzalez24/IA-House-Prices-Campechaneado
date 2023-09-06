@@ -12,7 +12,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="esp">
-      <body className={inter.className}>
+      <body className={inter.className + " relative h-[100vh]"}>
         <Navbar/>
         {children}</body>
     </html>
