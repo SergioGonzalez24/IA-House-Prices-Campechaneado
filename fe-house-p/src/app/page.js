@@ -6,7 +6,7 @@ export default function Home() {
     <>
       <div>
         <br />
-        <Image src={ meme.src } alt='meme' />
+        <Image src={ meme } alt='meme' />
       </div>
     </>
   )
