@@ -4,7 +4,6 @@ import * as React from 'react';
 
 import { Avatar, Button, TextField, FormControlLabel, Checkbox, Link, Grid, Box, Typography, Container} from '@mui/material';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
-import { CopyrightComponent } from '@/components/CopyRightComponent';
 
 // Componente de inicio de sesión
 export default function LoginComponent() {
@@ -101,12 +100,6 @@ export default function LoginComponent() {
 
         </Box>
         {/* Fin del componente de inicio de sesión */}
-
-        <CopyrightComponent sx={{
-          mt: 5,
-          mb: 5
-        }}/>
-
       </Container>
 
   );

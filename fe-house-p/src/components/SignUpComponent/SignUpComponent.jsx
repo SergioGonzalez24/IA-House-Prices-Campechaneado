@@ -5,7 +5,6 @@ import * as React from 'react';
 
 import { Avatar, Button, TextField, Link, Grid, Box, Typography, Container} from '@mui/material';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
-import { CopyrightComponent } from '@/components/CopyRightComponent';
 
 
 export default function SignUpComponent() {
@@ -109,12 +108,6 @@ export default function SignUpComponent() {
 
           </Box>
         </Box>
-
-        <CopyrightComponent sx={{
-          mt: 5,
-          mb: 5
-        }}/>
-
       </Container>
 
   );
