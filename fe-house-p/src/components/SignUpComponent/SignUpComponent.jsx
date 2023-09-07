@@ -5,7 +5,7 @@ import * as React from 'react';
 
 import { Avatar, Button, TextField, Link, Grid, Box, Typography, Container} from '@mui/material';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
-import { CopyrightComponent } from '../CopyRightComponent';
+import { CopyrightComponent } from '@/components/CopyRightComponent';
 
 
 export default function SignUpComponent() {

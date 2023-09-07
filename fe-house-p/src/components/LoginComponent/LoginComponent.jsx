@@ -4,7 +4,7 @@ import * as React from 'react';
 
 import { Avatar, Button, TextField, FormControlLabel, Checkbox, Link, Grid, Box, Typography, Container} from '@mui/material';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
-import { CopyrightComponent } from '../CopyRightComponent';
+import { CopyrightComponent } from '@/components/CopyRightComponent';
 
 // Componente de inicio de sesión
 export default function LoginComponent() {
