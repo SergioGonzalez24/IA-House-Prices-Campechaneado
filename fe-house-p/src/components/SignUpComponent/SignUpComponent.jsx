@@ -1,47 +1,29 @@
-// export default function SignUpComponent() {
-//     return (
-//         <>
-//         </>
-//     );
-// }
 
 'use client';
 
 import * as React from 'react';
 
-import { Avatar, Button, TextField, FormControlLabel, Checkbox, Link, Grid, Box, Typography, Container} from '@mui/material';
+import { Avatar, Button, TextField, Link, Grid, Box, Typography, Container} from '@mui/material';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { CopyrightComponent } from '../CopyRightComponent';
 
-function Copyright(props) {
-  return (
-    <Typography variant="body2" color="text.secondary" align="center" {...props}>
-      {'Copyright © '}
-      <Link color="inherit" href="https://mui.com/">
-        Your Website
-      </Link>{' '}
-      {new Date().getFullYear()}
-      {'.'}
-    </Typography>
-  );
-}
 
-// TODO remove, this demo shouldn't need to reset the theme.
+export default function SignUpComponent() {
 
-const defaultTheme = createTheme();
-
-export default function SignUp() {
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
     console.log({
       email: data.get('email'),
       password: data.get('password'),
-    });
+      firstName: data.get('firstName'),
+      lastName: data.get('lastName'), 
+    }); 
+
   };
 
   return (
-    <ThemeProvider theme={defaultTheme}>
+    
       <Container component="main" maxWidth="xs">
       
         <Box
@@ -52,13 +34,16 @@ export default function SignUp() {
             alignItems: 'center',
           }}
         >
-          <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
+          <Avatar sx={{ m: 1}}>
             <LockOutlinedIcon />
           </Avatar>
+
           <Typography component="h1" variant="h5">
             Sign up
           </Typography>
+
           <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3 }}>
+
             <Grid container spacing={2}>
               <Grid item xs={12} sm={6}>
                 <TextField
@@ -67,7 +52,7 @@ export default function SignUp() {
                   required
                   fullWidth
                   id="firstName"
-                  label="First Name"
+                  label="Nombre"
                   autoFocus
                 />
               </Grid>
@@ -76,7 +61,7 @@ export default function SignUp() {
                   required
                   fullWidth
                   id="lastName"
-                  label="Last Name"
+                  label="Apellido"
                   name="lastName"
                   autoComplete="family-name"
                 />
@@ -102,13 +87,9 @@ export default function SignUp() {
                   autoComplete="new-password"
                 />
               </Grid>
-              <Grid item xs={12}>
-                <FormControlLabel
-                  control={<Checkbox value="allowExtraEmails" color="primary" />}
-                  label="I want to receive inspiration, marketing promotions and updates via email."
-                />
-              </Grid>
+
             </Grid>
+
             <Button
               type="submit"
               fullWidth
@@ -117,17 +98,24 @@ export default function SignUp() {
             >
               Sign Up
             </Button>
-            <Grid container justifyContent="flex-end">
+
+            <Grid container justifyContent="flex-center">
               <Grid item>
-                <Link href="#" variant="body2">
+                <Link href="http://localhost:3000/Login" variant="body2">
                   Already have an account? Sign in
                 </Link>
               </Grid>
             </Grid>
+
           </Box>
         </Box>
-        <Copyright sx={{ mt: 5 }} />
+
+        <CopyrightComponent sx={{
+          mt: 5,
+          mb: 5
+        }}/>
+
       </Container>
-    </ThemeProvider>
+
   );
 }
