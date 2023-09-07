@@ -1,24 +1,10 @@
 'use client';
 
 import * as React from 'react';
+
 import { Avatar, Button, TextField, FormControlLabel, Checkbox, Link, Grid, Box, Typography, Container} from '@mui/material';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
-
-
-
-// Componente de Copyright 
-function Copyright(props) {
-  return (
-    <Typography variant="body2" color="text.secondary" align="center" {...props}>
-      {'Copyright © '}
-      <Link color="inherit" href="http://localhost:3000"> {/* Revisar ligas de acceso*/}
-        Housea
-      </Link>{' '}
-      {new Date().getFullYear()}
-      {'.'}
-    </Typography>
-  );
-}
+import { CopyrightComponent } from '../CopyRightComponent';
 
 // Componente de inicio de sesión
 export default function LoginComponent() {
@@ -116,7 +102,11 @@ export default function LoginComponent() {
         </Box>
         {/* Fin del componente de inicio de sesión */}
 
-        <Copyright sx={{ mt: 8, mb: 4 }} /> {/* Componente de copyright*/}
+        <CopyrightComponent sx={{
+          mt: 5,
+          mb: 5
+        }}/>
+
       </Container>
 
   );
