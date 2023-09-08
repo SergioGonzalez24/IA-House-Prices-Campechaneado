@@ -4,11 +4,11 @@ export default function Navbar() {
   return (
     <>
     <div className="hidden sm:block">
-      <DesktopNav></DesktopNav>
+      <DesktopNav />
     </div>
 
     <div className="sm:hidden">
-      <MovilNav></MovilNav>
+      <MovilNav />
     </div>
     </>
   );

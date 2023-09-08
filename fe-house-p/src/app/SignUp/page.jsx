@@ -1,13 +1,13 @@
 import React from "react";
 
 import { SignUpComponent } from "@/components/SignUpComponent";
-import { CopyrightComponent } from '@/components/CopyRightComponent';
+import { CprghtComponent } from '@/components/CprghtComponent';
 export default function SignUp() {
     return (
       <>
         <SignUpComponent />
         <br />
-        <CopyrightComponent />
+        <CprghtComponent />
 
       </>
     );

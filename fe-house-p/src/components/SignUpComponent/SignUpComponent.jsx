@@ -44,27 +44,30 @@ export default function SignUpComponent() {
           <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3 }}>
 
             <Grid container spacing={2}>
+
               <Grid item xs={12} sm={6}>
                 <TextField
-                  autoComplete="given-name"
+                  autoFocus
                   name="firstName"
                   required
                   fullWidth
                   id="firstName"
                   label="Nombre"
-                  autoFocus
+                  autoComplete="given-name"
                 />
               </Grid>
+
               <Grid item xs={12} sm={6}>
                 <TextField
+                  name="lastName"
                   required
                   fullWidth
                   id="lastName"
                   label="Apellido"
-                  name="lastName"
                   autoComplete="family-name"
                 />
               </Grid>
+
               <Grid item xs={12}>
                 <TextField
                   required
@@ -75,6 +78,7 @@ export default function SignUpComponent() {
                   autoComplete="email"
                 />
               </Grid>
+
               <Grid item xs={12}>
                 <TextField
                   required
