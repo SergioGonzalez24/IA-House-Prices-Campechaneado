@@ -2,15 +2,22 @@
 
 import * as React from 'react';
 
-import { Avatar, Button, TextField, FormControlLabel, Checkbox, Link, Grid, Box, Typography, Container} from '@mui/material';
+import { Avatar,TextField, FormControlLabel, Checkbox, Link, Grid, Box, Typography, Container} from '@mui/material';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
+
+import {Button} from '@nextui-org/react'; 
+
+
+
 
 // Componente de inicio de sesión
 export default function LoginComponent() {
+  
     
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
+
     console.log({
       email: data.get('email'),
       password: data.get('password'),
@@ -26,7 +33,6 @@ export default function LoginComponent() {
 
     <Container component="main" maxWidth="xs">
         
-        {/*<CssBaseline />*/}
 
         {/* Componente de inicio de sesión */}
         <Box
@@ -47,6 +53,7 @@ export default function LoginComponent() {
 
           {/* Formulario de inicio de sesión */}
           <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
+
             <TextField
               margin="normal"
               required
@@ -55,8 +62,9 @@ export default function LoginComponent() {
               label="Correo electrónico"
               name="email"
               autoComplete="email"
-              autoFocus
+              
             />
+          
             <TextField
               margin="normal"
               required
@@ -65,7 +73,7 @@ export default function LoginComponent() {
               label="Password"
               type="password"
               id="password"
-              autoComplete="current-password"
+              autoComplete="password"
             />
 
             <FormControlLabel
@@ -78,9 +86,11 @@ export default function LoginComponent() {
               fullWidth
               variant="contained"
               sx={{ mt: 3, mb: 2 }}
+              color='primary'
             >
               Sign In
             </Button>
+            
 
             <Grid container>
               <Grid item xs>
@@ -101,6 +111,7 @@ export default function LoginComponent() {
         </Box>
         {/* Fin del componente de inicio de sesión */}
       </Container>
+
 
   );
 }
