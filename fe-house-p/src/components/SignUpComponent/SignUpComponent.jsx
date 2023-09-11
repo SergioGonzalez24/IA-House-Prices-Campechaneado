@@ -98,14 +98,15 @@ export default function SignUpComponent() {
               fullWidth
               variant="contained"
               sx={{ mt: 3, mb: 2 }}
+              style={{ backgroundColor: '#28ac01', color: '#fff' }}
             >
               Sign Up
             </Button>
 
             <Grid container justifyContent="flex-center">
-              <Grid item>
+              <Grid item >
                 <Link href="http://localhost:3000/Login" variant="body2">
-                  Already have an account? Sign in
+                  ¿Ya tienes una cuenta? Inicia sesión
                 </Link>
               </Grid>
             </Grid>
