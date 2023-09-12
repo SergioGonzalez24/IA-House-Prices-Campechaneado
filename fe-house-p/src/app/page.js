@@ -1,16 +1,37 @@
-import { FirstSection, SecondSection } from '@/components/LandingComponents';
+'use client';
+import { FirstSection, SecondSection, ThirdSection } from "@/components/LandingComponents";
 
 export default function Home() {
   return (
-    <div style={{ height: '150vh', overflow: 'hidden' }}>
-      <section>
-        {/*Portada de la página*/}
+    <div>
+      <section sx={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        minHeight: "100vh"
+      }}>
+        {/* Portada de la página */}
         <FirstSection />
       </section>
+
       <section>
-        {/*Contenido de la página*/}
+        {/* Contenido de la página */}
         <SecondSection />
       </section>
+
+      <section>
+        {/* Contenido de la página */}
+        <ThirdSection />
+      </section>
+
+      <style jsx>{`
+        @media screen and (min-width: 900px) {
+          section {
+            padding-top: 100px; /* Ajusta el espaciado aquí según tus necesidades */
+            padding-bottom: 150px; /* Ajusta el espaciado aquí según tus necesidades */
+          }
+        }
+      `}</style>
     </div>
   );
 }
