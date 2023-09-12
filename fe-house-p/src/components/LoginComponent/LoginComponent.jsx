@@ -86,7 +86,7 @@ export default function LoginComponent() {
               fullWidth
               variant="contained"
               sx={{ mt: 3, mb: 2 }}
-              color='primary'
+              style={{ backgroundColor: '#28ac01', color: '#fff' }}
             >
               Sign In
             </Button>
@@ -95,12 +95,12 @@ export default function LoginComponent() {
             <Grid container>
               <Grid item xs>
                 <Link href="http://localhost:3000/EnConstruccion" variant="body2">
-                  Forgot password?
+                  ¿Olvidaste tu contraseña?
                 </Link>
               </Grid>
               <Grid item>
                 <Link href="http://localhost:3000/SignUp" variant="body2">
-                  {"Don't have an account? Sign Up"}
+                  {"¿No tienes una cuenta? Regístrate"}
                 </Link>
               </Grid>
             </Grid>
