@@ -13,13 +13,15 @@ import {
   appstore,
 } from "@/assets/images";
 
+
+
 export default function FirstSection() {
   return (
     <Box
       sx={{
         bgcolor: "#fff",
         overflow: "hidden",
-        border: '1px dashed grey'
+        // border: '1px dashed grey'
       }}
     >
       <Grid container spacing={2}>
@@ -54,7 +56,7 @@ export default function FirstSection() {
                   style={{
                     backgroundColor: "#28ac01",
                     color: "#FFFFFF",
-                    marginBottom: "10px",
+                    marginBottom: "1px",
                   }}
                 >
                   Empieza ahora
@@ -82,7 +84,7 @@ export default function FirstSection() {
                   item
                   xs={3}
                   style={{
-                    border: "1px dashed grey",
+                    // border: "1px dashed grey",
                     display: "flex",
                     alignItems: "center",
                   }}
@@ -92,7 +94,7 @@ export default function FirstSection() {
                     target="_blank"
                     rel="noopener noreferrer"
                     style={{
-                      marginRight: "20px",
+                      marginRight: "1px",
                       transition: "transform 0.2s",
                     }}
                   >
@@ -104,6 +106,7 @@ export default function FirstSection() {
                         height: "auto",
                         position: "relative",
                         right: 20,
+                        bottom: 2,
                       }}
                     />
                   </a>
@@ -114,7 +117,7 @@ export default function FirstSection() {
                   item
                   xs={3}
                   style={{
-                    border: "1px dashed grey",
+                    // border: "1px dashed grey",
                     display: "flex",
                     alignItems: "center",
                   }}
@@ -124,7 +127,7 @@ export default function FirstSection() {
                     target="_blank"
                     rel="noopener noreferrer"
                     style={{
-                      marginRight: "20px",
+                      marginRight: "1px",
                       transition: "transform 0.2s",
                     }}
                   >
@@ -132,7 +135,7 @@ export default function FirstSection() {
                       src={google}
                       alt="Descargar en Google Play Store"
                       style={{
-                        width: "100%", // Asegura que ambas imágenes tengan el mismo ancho
+                        width: "97%", // Asegura que ambas imágenes tengan el mismo ancho
                         height: "auto",
                         position: "relative",
                         right: 20,
@@ -149,7 +152,7 @@ export default function FirstSection() {
           {" "}
           {/*border: '1px dashed grey', */}
           <Container>
-            <Image
+            {/* <Image
               src={degradado}
               alt="degradado"
               style={{
@@ -159,7 +162,21 @@ export default function FirstSection() {
                 width: "100%",
                 opacity: 0.5,
               }}
-            />
+            /> */}
+            <video
+      src="/degradadoVid.mp4" // Notice the path here starts with a "/"
+      alt="degradado"
+      style={{
+        position: "relative",
+        top: 0,
+        left: 130,
+        width: "100%",
+        opacity: 0.8,
+      }}
+      autoPlay
+      loop
+      muted
+    />
             <Image
               src={phone_035}
               alt="phone"
