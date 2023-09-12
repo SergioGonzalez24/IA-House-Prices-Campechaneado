@@ -1,13 +1,16 @@
-import { meme } from '@/assets/images/'
-import Image from 'next/image'
+import { FirstSection, SecondSection } from '@/components/LandingComponents';
 
 export default function Home() {
   return (
-    <>
-      <div>
-        <br />
-        <Image src={ meme } alt='meme' />
-      </div>
-    </>
-  )
+    <div style={{ height: '150vh', overflow: 'hidden' }}>
+      <section>
+        {/*Portada de la página*/}
+        <FirstSection />
+      </section>
+      <section>
+        {/*Contenido de la página*/}
+        <SecondSection />
+      </section>
+    </div>
+  );
 }
