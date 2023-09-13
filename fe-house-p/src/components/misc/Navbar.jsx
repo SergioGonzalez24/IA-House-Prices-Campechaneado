@@ -9,15 +9,19 @@ import Link from "next/link";
 import { usePathname } from 'next/navigation'
 import isMobile from "is-mobile";
 import { useRouter } from 'next/navigation'
+import { useEffect } from "react";
 
 
 export default function Navbar() {
   const pathname = usePathname()
   const router = useRouter()
-  
-  if (isMobile()) {
-    router.push('/Login')
-  }
+
+  useEffect(() => {
+    if (isMobile()) {
+      router.push('/Login')
+    }
+  }, []);
+
 
   return (
     <div className={pathname == "/Login" || pathname == "/SignUp" ? "hidden": ""}>
