@@ -89,7 +89,7 @@ export default function Navbar() {
       }
 
 
-      <nav className="block md:hidden z-[9999]">
+      <nav className="block md:hidden z-[9999]"p>
         <div className="fixed w-full h-[60px] -translate-x-1/2 bg-white border border-gray-200 bottom-0 left-1/2">
           <div className="grid h-full grid-cols-4 mx-auto">
             <Link className="inline-flex flex-col items-center justify-center group text-[1.5rem]"

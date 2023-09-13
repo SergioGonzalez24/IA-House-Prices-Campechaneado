@@ -3,7 +3,7 @@ import { FirstSection, SecondSection, ThirdSection } from "@/components/LandingC
 
 export default function Home() {
   return (
-    <div>
+    <div style={{ zIndex: -1 }}>
       <section sx={{
         display: "flex",
         justifyContent: "center",

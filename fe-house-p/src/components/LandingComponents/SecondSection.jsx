@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import React, { useEffect, useRef } from "react";
 import { Typography, Grid, Paper } from "@mui/material";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
@@ -50,7 +50,11 @@ export default function SecondSection() {
   }, [inView]);
 
   return (
-  <div className="bg-[#28ac01] bg-opacity-20 py-6" style={{ position: "relative", overflow: "hidden" }}>
+    <div
+      className="bg-[#28ac01] bg-opacity-20 py-6 z-[-1]"
+      style={{ position: "relative", overflow: "hidden" }}
+      
+    >
       {/* Div con video de fondo */}
       <div className="video-background">
         <video autoPlay loop muted playsInline className="video">
@@ -60,20 +64,30 @@ export default function SecondSection() {
         </video>
       </div>
 
-      <div className="container mx-auto text-center" style={{ position: "relative" }}>
+      <div
+        className="container mx-auto text-center"
+        style={{ position: "relative", height: "100%"}}
+      >
         <Grid container spacing={4}>
           {points.map((point, index) => (
             <Grid key={index} item xs={12} md={4}>
               <div ref={(element) => (paperRefs.current[index] = element)}>
-              <Paper elevation={5} className="py-4 px-6 rounded-lg h-full" ref={ref} style={{ height: "100%" }}>
-                {point.icon}
-                <Typography variant="h6" className="text-white mb-2">
-                  {point.title}
-                </Typography>
-                <Typography variant="body2" className="text-black text-justify">
-                  {point.description}
-                </Typography>
-              </Paper>
+                <Paper
+                  elevation={5}
+                  ref={ref}
+                  style={{ margin: "10px", padding: "20px", height: "100%" }}
+                >
+                  {point.icon}
+                  <Typography variant="h6" className="text-white mb-2">
+                    {point.title}
+                  </Typography>
+                  <Typography
+                    variant="body2"
+                    className="text-black text-justify"
+                  >
+                    {point.description}
+                  </Typography>
+                </Paper>
               </div>
             </Grid>
           ))}
