@@ -12,7 +12,7 @@ import { useRouter } from 'next/navigation'
 import { useEffect, useState } from "react";
 import {FiMenu} from "react-icons/fi"
 import {RxCross2} from "react-icons/rx"
-import {BiBriefcaseAlt} from "react-icons"
+import {BiBriefcaseAlt} from "react-icons/bi"
 
 
 export default function Navbar() {
@@ -33,14 +33,14 @@ export default function Navbar() {
             </a>
             <div className="flex md:order-2">
               <div className="flex gap-[10px]">
-                <a className="bg-white hover:bg-[#E9E9E9] text-[.8rem] text-black py-2 px-4 border border-gray-300 rounded-[20px] cursor-pointer lg:text-[0.9rem]"
-                  href="http://localhost:3000/Login">
+                <Link className="bg-white hover:bg-[#E9E9E9] text-[.8rem] text-black py-2 px-4 border border-gray-300 rounded-[20px] cursor-pointer lg:text-[0.9rem]"
+                  href="/Login">
                   INICIAR SESIÓN
-                </a>
-                <a className="bg-[#28ac01] hover:bg-[#208C00] text-[.8rem] font-semibold text-white py-2 px-4 border rounded-[20px] cursor-pointer lg:text-[0.9rem]"
-                  href="http://localhost:3000/SignUp">
+                </Link>
+                <Link className="bg-[#28ac01] hover:bg-[#208C00] text-[.8rem] font-semibold text-white py-2 px-4 border rounded-[20px] cursor-pointer lg:text-[0.9rem]"
+                  href="/SignUp">
                   REGÍSTRATE
-                </a>
+                </Link>
               </div>
             </div>
             <div className="items-center justify-between" id="navbar-sticky">
@@ -63,13 +63,13 @@ export default function Navbar() {
         </nav>
       :
         <nav className="bg-white sticky top-0 w-full z-20 border-b border-gray-200 hidden md:block">
-          <div className=" flex flex-wrap items-center justify-between p-4 mx-[20px] lg:mx-[100px] ">
+          <div className=" flex items-center justify-between p-4 mx-[50px] lg:mx-[100px] ">
             <a href="https://flowbite.com/" className="flex items-center">
                 <Image src={logo_housea} className="w-[50px]" alt="Housea logo"></Image>
-                <span className="self-center text-[1.3rem] whitespace-nowrap text-[1rem] lg:text-[1.3rem]">HOUSEA</span>
+                <span className="self-center text-[1.3rem] whitespace-nowrap ">HOUSEA</span>
             </a>
-            <div className="items-center justify-between" id="navbar-sticky">
-              <ul className="flex p-4 md:p-0 gap-[40px] content-center text-[0.8rem] lg:text-[1rem]">
+            <div className="items-center justify-between">
+              <ul className="flex p-4 gap-[40px] content-center text-[1rem]">
                 <li>
                   <Link href="/home" className={"hover:text-[#208C00] hover:border-b-2 hover:border-[#208C00] " + (pathname == "/home" ? " text-[#208C00] font-semibold border-b-2 border-[#208C00]" : " text-black")}>INICIO</Link>
                 </li>
@@ -102,7 +102,7 @@ export default function Navbar() {
             </Link>
             <Link className="inline-flex flex-col items-center justify-center group text-[1.5rem]"
                href="/misproyectos">
-              <AiOutlineHeart color={pathname == "/misproyectos" ? "#208C00" : "black"}></AiOutlineHeart>
+              <BiBriefcaseAlt color={pathname == "/misproyectos" ? "#208C00" : "black"}></BiBriefcaseAlt>
             </Link>
             <Link className="inline-flex flex-col items-center justify-center group text-[1.5rem]"
                href="/profile">
