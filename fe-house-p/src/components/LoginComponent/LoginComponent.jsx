@@ -25,7 +25,7 @@ export default function LoginComponent() {
 
     // Ejemplo de redirección 
     if (data.get('email') === 'admin' && data.get('password') === 'admin') {
-      window.location.href = "http://localhost:3000/HomeMovilNavbar"; 
+      window.location.href = "http://localhost:3000/home"; 
     }
   };
 

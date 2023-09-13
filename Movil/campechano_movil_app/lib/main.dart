@@ -34,7 +34,7 @@ class MyWebView extends StatelessWidget {
       ),
       body: const WebView(
         initialUrl:
-            'http://localhost:3000/HomeMovilNavbar', // Cambiar a la URL de la aplicación
+            'https://housea-git-dev-sergiogonzalez24.vercel.app/', // Cambiar a la URL de la aplicación
         javascriptMode:
             JavascriptMode.unrestricted, // Habilita la ejecución de JavaScript
       ),
