@@ -1,11 +1,6 @@
-"use client"
 import "../styles/globals.css";
 import { Inter } from "next/font/google";
 import Navbar from "@/components/misc/Navbar";
-import isMobile from "is-mobile";
-import { useRouter } from 'next/navigation'
-import { useEffect } from "react";
-import { usePathname } from 'next/navigation'
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,15 +11,6 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
-  const router = useRouter()
-  const pathname = usePathname()
-
-
-  // useEffect(() => {
-  //   if (isMobile() && pathname == "/") {
-  //     router.push('/Login')
-  //   }
-  // }, []);
 
   return (
     <html lang="esp">
