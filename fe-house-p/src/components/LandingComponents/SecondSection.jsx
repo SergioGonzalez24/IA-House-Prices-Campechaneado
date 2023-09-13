@@ -1,34 +1,61 @@
-'use client';
-
+"use client";
 import React, { useEffect } from "react";
-import { Typography } from "@mui/material";
+import { Typography, Grid, Paper } from "@mui/material";
+import CheckCircleIcon from "@mui/icons-material/CheckCircle";
+import TrendingUpIcon from "@mui/icons-material/TrendingUp";
+import BusinessIcon from "@mui/icons-material/Business";
 import anime from "animejs";
 
-export default function SecondSection() {
+const points = [
+  {
+    title: "Rendimiento Comprobado",
+    description:
+      "Descubre cómo nuestros usuarios han experimentado un aumento promedio del XX% en el rendimiento de sus inversiones. Nuestra plataforma utiliza inteligencia artificial para seleccionar proyectos de inversión de alta calidad.",
+    icon: <TrendingUpIcon fontSize="large" />,
+  },
+  {
+    title: "Acceso a Proyectos Exclusivos",
+    description:
+      "Únete a HOUSEA y accede a oportunidades de inversión exclusivas que no encontrarás en otro lugar. Nuestra plataforma utiliza el poder del crowdfunding para llevar proyectos al siguiente nivel.",
+    icon: <BusinessIcon fontSize="large" />,
+  },
+  {
+    title: "Facilidad y Seguridad",
+    description:
+      "Invertir con HOUSEA es fácil y seguro. Nuestra plataforma utiliza tecnología de vanguardia para proteger tus inversiones y ofrece una experiencia de usuario intuitiva para que puedas comenzar a invertir de manera inteligente en minutos.",
+    icon: <CheckCircleIcon fontSize="large" />,
+  },
+];
+
+export default function Home() {
   useEffect(() => {
     // Configura la animación con Anime.js
-    const sloganAnimation = anime.timeline({
+    const pointsAnimation = anime.timeline({
       autoplay: false, // La animación se activará manualmente al hacer scroll
     });
 
-    sloganAnimation
-      .add({
-        targets: ".slogan",
-        translateY: [-30, 0], // Cambia el desplazamiento hacia arriba a -30px
-        opacity: [0, 1],
-        scale: [0.7, 1], // Agrega una pequeña escala para hacerlo más moderno
-        duration: 1000, // Ajusta la duración para una animación más rápida
-        easing: "easeOutExpo", // Cambia la función de aceleración para una sensación moderna
-      });
+    pointsAnimation.add({
+      targets: ".point",
+      translateY: [-30, 0],
+      opacity: [0, 1],
+      scale: [0.7, 1],
+      duration: 800,
+      easing: "easeOutExpo",
+      delay: anime.stagger(200),
+    });
 
     // Función para activar la animación cuando se haga scroll
     const handleScroll = () => {
-      const sloganElement = document.querySelector(".slogan");
-      const sloganOffset = sloganElement.getBoundingClientRect().top;
+      const pointsElements = document.querySelectorAll(".point");
+      const lastPoint = pointsElements[pointsElements.length - 1];
 
-      // Activar la animación cuando el slogan esté en el viewport
-      if (sloganOffset < window.innerHeight * 0.75) {
-        sloganAnimation.play();
+      if (lastPoint) {
+        const lastPointOffset = lastPoint.getBoundingClientRect().top;
+
+        // Activar la animación cuando el último punto esté en el viewport
+        if (lastPointOffset < window.innerHeight * 0.75) {
+          pointsAnimation.play();
+        }
       }
     };
 
@@ -42,11 +69,24 @@ export default function SecondSection() {
   }, []);
 
   return (
-    <div className="bg-gradient-to-r from-green-400 to-blue-500 h-60 flex flex-col justify-center items-center text-white my-8 mx-4 p-4 rounded-lg shadow-lg">
-      {/* Añade margen (my-8), relleno (p-4) y esquinas redondeadas (rounded-lg) */}
-      <Typography variant="h4" className="slogan">
-        SLOGAN
-      </Typography>
+    <div className="bg-gradient-to-r from-green-500 to-black min-h-screen py-12">
+      <div className="container mx-auto text-center">
+        <Grid container spacing={4}>
+          {points.map((point, index) => (
+            <Grid key={index} item xs={12} md={4}>
+              <Paper className="py-4 px-6 rounded-lg hover:shadow-lg point">
+                {point.icon}
+                <Typography variant="h6" className="text-white mb-2">
+                  {point.title}
+                </Typography>
+                <Typography variant="body2" className="text-black">
+                  {point.description}
+                </Typography>
+              </Paper>
+            </Grid>
+          ))}
+        </Grid>
+      </div>
     </div>
   );
 }
