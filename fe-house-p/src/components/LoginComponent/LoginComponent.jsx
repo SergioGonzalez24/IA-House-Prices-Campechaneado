@@ -4,6 +4,7 @@ import * as React from 'react';
 
 import { Avatar,TextField, Button, FormControlLabel, Checkbox, Link, Grid, Box, Typography, Container} from '@mui/material';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
+import { useRouter } from 'next/navigation'
 
 
 
@@ -12,6 +13,7 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 
 // Componente de inicio de sesión
 export default function LoginComponent() {
+  const router = useRouter()
   
     
   const handleSubmit = (event) => {
@@ -25,7 +27,7 @@ export default function LoginComponent() {
 
     // Ejemplo de redirección 
     if (data.get('email') === 'admin' && data.get('password') === 'admin') {
-      window.location.href = "http://localhost:3000/home"; 
+      router.push('/home')
     }
   };
 
@@ -99,7 +101,7 @@ export default function LoginComponent() {
                 </Link>
               </Grid>
               <Grid item>
-                <Link href="http://localhost:3000/SignUp" variant="body2">
+                <Link href="/SignUp" variant="body2">
                   {"¿No tienes una cuenta? Regístrate"}
                 </Link>
               </Grid>
