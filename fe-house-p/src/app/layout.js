@@ -20,11 +20,11 @@ export default function RootLayout({ children }) {
   const pathname = usePathname()
 
 
-  useEffect(() => {
-    if (isMobile() && pathname == "/") {
-      router.push('/Login')
-    }
-  }, []);
+  // useEffect(() => {
+  //   if (isMobile() && pathname == "/") {
+  //     router.push('/Login')
+  //   }
+  // }, []);
 
   return (
     <html lang="esp">
