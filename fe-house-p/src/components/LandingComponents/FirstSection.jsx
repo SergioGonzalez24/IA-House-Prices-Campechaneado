@@ -41,7 +41,7 @@ export default function FirstSection() {
               <Typography
                 variant="body1"
                 paragraph
-                style={{ color: "#181818", maxWidth: "600px"}}
+                style={{ color: "#181818", paddingRight: "20px",maxWidth: "600px"}}
               >
                 Nuestra plataforma combina el poder del crowdfunding con la
                 precisión de la inteligencia artificial para llevar tus
