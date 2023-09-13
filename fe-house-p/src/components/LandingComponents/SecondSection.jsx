@@ -65,7 +65,7 @@ export default function SecondSection() {
           {points.map((point, index) => (
             <Grid key={index} item xs={12} md={4}>
               <div ref={(element) => (paperRefs.current[index] = element)}>
-              <Paper elevation={5} className="py-4 px-6 rounded-lg h-full" ref={ref}>
+              <Paper elevation={5} className="py-4 px-6 rounded-lg h-full" ref={ref} style={{ height: "100%" }}>
                 {point.icon}
                 <Typography variant="h6" className="text-white mb-2">
                   {point.title}
