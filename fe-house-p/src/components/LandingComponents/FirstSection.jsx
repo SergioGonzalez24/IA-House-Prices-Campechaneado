@@ -15,36 +15,43 @@ import {
 
 export default function FirstSection() {
   return (
-   
-
-    
     <Box
       sx={{
-        
+        height: "100%",
         overflow: "hidden",
         position: "relative",
-      // border: '1px dashed grey'
-
+        marginTop: "90px",
+        marginBottom: "1px",
+        marginLeft: "30px",
+        padding: "10px",
+        paddingBottom: "100px",
+  
       }}
     >
       <Grid container spacing={2}>
-        <Grid item xs={12} md={6} style={{zIndex:-1}}>
-          <Container style={{ marginTop: "10px", paddingTop: "50px", marginLeft: "50px"}}>
-            <Box sx={{ flexGrow: 1 }}>
-              <Typography variant="h5" style={{ color: "#181818" }}>
+        <Grid
+          item
+          xs={12}
+          md={6}
+          style={{ zIndex: -1 }}
+        >
+          <Container style={{ marginTop:"70px", marginBottom:"80px"}}>
+            <Box sx={{ flexGrow: 1, height: "100%", paddingTop:"20px", paddingBottom:"20px"}}>
+              <Typography variant="h4" style={{ color: "#181818" }}>
                 HOUSEA
               </Typography>
 
-              <Typography variant="h3" style={{ color: "#181818" }}>
-                TU INVERSIÓN 
-                
-                INTELIGENTE
+              <Typography variant="h2" style={{ color: "#181818", marginBottom:"5px"}}>
+                TU INVERSIÓN <br /> INTELIGENTE
               </Typography>
 
               <Typography
                 variant="body1"
                 paragraph
-                style={{ color: "#181818", paddingRight: "20px",maxWidth: "600px"}}
+                style={{
+                  color: "#181818",
+                  maxWidth: "500px",
+                }}
               >
                 Nuestra plataforma combina el poder del crowdfunding con la
                 precisión de la inteligencia artificial para llevar tus
@@ -52,24 +59,29 @@ export default function FirstSection() {
                 nuevo mundo de oportunidades financieras.
               </Typography>
 
-              <Box sx={{ flexGrow: 1 }} style={{ marginBottom: "15px" }}>
+              <Box sx={{ flexGrow: 1 }} style={{ marginTop: "35px",marginBottom:"35px"}}>
                 <Button
                   variant="contained"
+                  size="large"
                   href="/SignUp"
                   style={{
+
                     backgroundColor: "#28ac01",
                     color: "#FFFFFF",
                     marginBottom: "1px",
+                    borderRadius: "30px",
+                    width: "200px",
+                    height: "50px",
                   }}
                 >
-                  Empieza ahora
+                  <b>Empieza ahora</b>
                 </Button>
               </Box>
 
               {/* Download buttons */}
 
               <Grid container spacing={2}>
-                <Grid item xs={12}>
+                <Grid item xs={12} style={{ margin:"20px"}}>
                   <div>
                     <Typography
                       variant="body1"
@@ -87,12 +99,10 @@ export default function FirstSection() {
                   item
                   xs={3}
                   style={{
-                    // border: "1px dashed grey",
                     display: "flex",
                     alignItems: "center",
                   }}
                 >
-
                   <a
                     href="ENLACE_DE_APP_STORE"
                     target="_blank"
@@ -102,12 +112,8 @@ export default function FirstSection() {
                       transition: "transform 0.2s",
                     }}
                   >
-                    <Image
-                      src={appstore}
-                      alt="Descargar en App Store"
-                    />
+                    <Image src={appstore} alt="Descargar en App Store" />
                   </a>
-
                 </Grid>
 
                 {/* Segunda imagen */}
@@ -115,13 +121,10 @@ export default function FirstSection() {
                   item
                   xs={3}
                   style={{
-                    // border: "1px dashed grey",
                     display: "flex",
                     alignItems: "center",
                   }}
                 >
-                  
-
                   <a
                     href="ENLACE_DE_GOOGLE_PLAY"
                     target="_blank"
@@ -131,34 +134,39 @@ export default function FirstSection() {
                       transition: "transform 0.2s",
                     }}
                   >
-                    <Image
-                      src={google}
-                      alt="Descargar en Google Play Store"
-                    />
+                    <Image src={google} alt="Descargar en Google Play Store" />
                   </a>
-
-                  
-
                 </Grid>
               </Grid>
             </Box>
           </Container>
         </Grid>
 
-        <Grid item xs={12} md={6} style={{ position: "relative" }}>
-          {" "}
-          {/*border: '1px dashed grey', */}
-          <Container>
+        <Grid
+          item
+          xs={12}
+          md={6}
+          style={{
+            position: "relative",
+            zIndex: -1,
+          }}
+        >
+
+          <Container style={{ position: "relative", marginTop:"70px", marginBottom:"80px"}}>
             <video
-              src="/degradadoVid.mp4" // Notice the path here starts with a "/"
+              src="/degradadoVid.mp4"
               alt="degradado"
               style={{
-                position: "relative",
-                top: 0,
-                left: 130,
-                width: "100%",
-                opacity: 0.8,
+                marginTop: "30px",
+                marginBottom: "50px",
                 zIndex: -1,
+                position: "relative", // Establece la posición absoluta para superponer el video
+                width: "170%", // Ajusta el ancho al 120% para agrandar el video
+                height: "auto", // Permite que la altura se ajuste automáticamente para mantener la proporción
+                objectFit: "cover", // Controla cómo se ajusta el video
+                left: "100px", // Alinea la parte izquierda del video con la parte izquierda del contenedor
+                borderRadius: "30px",
+    
               }}
               autoPlay
               loop
@@ -167,12 +175,22 @@ export default function FirstSection() {
             <Image
               src={phone_035}
               alt="phone"
-              style={{ position: "absolute", top: 0, left: 0, width: "66%", zIndex: -1}}
+              style={{
+                position: "absolute", // Establece la posición absoluta para superponer la imagen de "phone"
+                top: 0, // Alinea la parte superior de "phone" con la parte superior del contenedor
+                left: -100, // Alinea la parte izquierda de "phone" con la parte izquierda del contenedor
+                width: "90%", // Ajusta el ancho de "phone" al 100% para que coincida con el contenedor
+                height: "auto", // Permite que la altura se ajuste automáticamente para mantener la proporción
+                marginTop: "0px",
+                marginBottom:"1px"
+                
+
+              }}
             />
           </Container>
+
         </Grid>
       </Grid>
     </Box>
-  
   );
 }
