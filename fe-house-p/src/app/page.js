@@ -3,13 +3,8 @@ import { FirstSection, SecondSection, ThirdSection } from "@/components/LandingC
 
 export default function Home() {
   return (
-    <div style={{ zIndex: -1 }}>
-      <section sx={{
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        minHeight: "100vh"
-      }}>
+    <div>
+      <section>
         {/* Portada de la página */}
         <FirstSection />
       </section>
@@ -24,14 +19,21 @@ export default function Home() {
         <ThirdSection />
       </section>
 
-      <style jsx>{`
-        @media screen and (min-width: 900px) {
-          section {
-            padding-top: 100px; /* Ajusta el espaciado aquí según tus necesidades */
-            padding-bottom: 150px; /* Ajusta el espaciado aquí según tus necesidades */
-          }
-        }
-      `}</style>
+      
     </div>
   );
 }
+
+
+
+
+/* 
+<style jsx>{`
+        @media screen and (min-width: 900px) {
+          section {
+            padding-top: 100px; /* Ajusta el espaciado aquí según tus necesidades 
+            padding-bottom: 190px; /* Ajusta el espaciado aquí según tus necesidades 
+          }
+        }
+      `}
+      </style> */
