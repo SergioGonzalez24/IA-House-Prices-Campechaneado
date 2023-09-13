@@ -14,14 +14,6 @@ import { useEffect } from "react";
 
 export default function Navbar() {
   const pathname = usePathname()
-  const router = useRouter()
-
-  useEffect(() => {
-    if (isMobile()) {
-      router.push('/Login')
-    }
-  }, []);
-
 
   return (
     <div className={pathname == "/Login" || pathname == "/SignUp" ? "hidden": ""}>
