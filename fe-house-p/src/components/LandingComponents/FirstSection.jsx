@@ -15,18 +15,21 @@ import {
 
 export default function FirstSection() {
   return (
+   
+
+    
     <Box
       sx={{
-        bgcolor: "#fff",
+        
         overflow: "hidden",
-        // border: '1px dashed grey'
+        position: "relative",
+      // border: '1px dashed grey'
+
       }}
     >
       <Grid container spacing={2}>
-        <Grid item xs={12} md={6}>
-          {" "}
-          {/*style={{ border: '1px dashed grey' }*/}
-          <Container style={{ marginTop: "10px", paddingTop: "50px", marginLeft: "50px" }}>
+        <Grid item xs={12} md={6} style={{zIndex:-1}}>
+          <Container style={{ marginTop: "10px", paddingTop: "50px", marginLeft: "50px"}}>
             <Box sx={{ flexGrow: 1 }}>
               <Typography variant="h5" style={{ color: "#181818" }}>
                 HOUSEA
@@ -155,6 +158,7 @@ export default function FirstSection() {
                 left: 130,
                 width: "100%",
                 opacity: 0.8,
+                zIndex: -1,
               }}
               autoPlay
               loop
@@ -163,11 +167,12 @@ export default function FirstSection() {
             <Image
               src={phone_035}
               alt="phone"
-              style={{ position: "absolute", top: 0, left: 0, width: "66%" }}
+              style={{ position: "absolute", top: 0, left: 0, width: "66%", zIndex: -1}}
             />
           </Container>
         </Grid>
       </Grid>
     </Box>
+  
   );
 }

@@ -25,10 +25,11 @@ export default function Navbar() {
 
     //   </div>
     // </nav>
+    
     <div className={pathname == "/Login" || pathname == "/SignUp" ? "hidden": ""}>
       {
         pathname == "/" ?
-        <nav className="bg-white sticky top-0 w-full z-20 border-b border-gray-200 hidden md:block">
+        <nav className="bg-white sticky top-0 w-full z-20 border-b border-gray-200 hidden md:block" style={{ zIndex: 1, position: "fixed"}}>
           <div className=" flex flex-wrap items-center justify-between p-4 mx-[20px] lg:mx-[100px] ">
             <a href="https://flowbite.com/" className="flex items-center">
                 <Image src={logo_housea} className="w-[50px]" alt="Housea logo"></Image>
@@ -109,7 +110,7 @@ export default function Navbar() {
       }
 
 
-      <nav className="block md:hidden z-[9999]">
+      <nav className="block md:hidden z-[9999]"p>
         <div className="fixed w-full h-[60px] -translate-x-1/2 bg-white border border-gray-200 bottom-0 left-1/2">
           <div className="grid h-full grid-cols-4 mx-auto">
             <Link className="inline-flex flex-col items-center justify-center group text-[1.5rem]"
