@@ -7,16 +7,20 @@ import {AiOutlineSearch} from "react-icons/ai";
 import {AiOutlineUser} from "react-icons/ai"
 import Link from "next/link";
 import { usePathname } from 'next/navigation'
-import { useState } from "react";
+import isMobile from "is-mobile";
+import { useRouter } from 'next/navigation'
 
 
 export default function Navbar() {
   const pathname = usePathname()
-
-  console.log(pathname)
+  const router = useRouter()
+  
+  if (isMobile()) {
+    router.push('/Login')
+  }
 
   return (
-    <>
+    <div className={pathname == "/Login" || pathname == "/SignUp" ? "hidden": ""}>
       <nav className="bg-white sticky top-0 w-full z-20 border-b border-gray-200 hidden md:block">
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-[100px] p-4">
           <a href="https://flowbite.com/" className="flex items-center">
@@ -65,25 +69,25 @@ export default function Navbar() {
       <nav className="block md:hidden z-[9999]">
         <div className="fixed w-full h-[60px] -translate-x-1/2 bg-white border border-gray-200 bottom-0 left-1/2">
           <div className="grid h-full grid-cols-4 mx-auto">
-            <Link className="inline-flex flex-col items-center justify-center group text-[1.5rem] hover:text-[1.6rem]"
+            <Link className="inline-flex flex-col items-center justify-center group text-[1.5rem]"
                href="/home">
               <GoHome color={pathname == "/home" ? "#208C00" : "black"}></GoHome>
             </Link>
-            <Link className="inline-flex flex-col items-center justify-center group text-[1.5rem] hover:text-[1.6rem]"
+            <Link className="inline-flex flex-col items-center justify-center group text-[1.5rem]"
                href="/search">
               <AiOutlineSearch color={pathname == "/search" ? "#208C00" : "black"}></AiOutlineSearch>
             </Link>
-            <Link className="inline-flex flex-col items-center justify-center group text-[1.5rem] hover:text-[1.6rem]"
+            <Link className="inline-flex flex-col items-center justify-center group text-[1.5rem]"
                href="/favs">
               <AiOutlineHeart color={pathname == "/favs" ? "#208C00" : "black"}></AiOutlineHeart>
             </Link>
-            <Link className="inline-flex flex-col items-center justify-center group text-[1.5rem] hover:text-[1.6rem]"
+            <Link className="inline-flex flex-col items-center justify-center group text-[1.5rem]"
                href="/profile">
               <AiOutlineUser color={pathname == "/profile" ? "#208C00" : "black"}></AiOutlineUser>
             </Link>
           </div>
         </div>
       </nav>
-    </>
+    </div>
   );
 }
