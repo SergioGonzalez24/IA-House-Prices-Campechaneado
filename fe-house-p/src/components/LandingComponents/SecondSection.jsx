@@ -1,9 +1,10 @@
-"use client";
-import React, { useEffect } from "react";
+'use client';
+import React, { useEffect, useRef } from "react";
 import { Typography, Grid, Paper } from "@mui/material";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import TrendingUpIcon from "@mui/icons-material/TrendingUp";
 import BusinessIcon from "@mui/icons-material/Business";
+import { useInView } from "react-intersection-observer";
 import anime from "animejs";
 
 const points = [
@@ -27,66 +28,79 @@ const points = [
   },
 ];
 
-export default function Home() {
+export default function SecondSection() {
+  const [ref, inView] = useInView({
+    triggerOnce: true, // Animar solo una vez cuando el elemento entre en el campo de visión
+  });
+
+  const paperRefs = useRef([]); // Referencias a los elementos Paper
+
   useEffect(() => {
-    // Configura la animación con Anime.js
-    const pointsAnimation = anime.timeline({
-      autoplay: false, // La animación se activará manualmente al hacer scroll
-    });
-
-    pointsAnimation.add({
-      targets: ".point",
-      translateY: [-30, 0],
-      opacity: [0, 1],
-      scale: [0.7, 1],
-      duration: 800,
-      easing: "easeOutExpo",
-      delay: anime.stagger(200),
-    });
-
-    // Función para activar la animación cuando se haga scroll
-    const handleScroll = () => {
-      const pointsElements = document.querySelectorAll(".point");
-      const lastPoint = pointsElements[pointsElements.length - 1];
-
-      if (lastPoint) {
-        const lastPointOffset = lastPoint.getBoundingClientRect().top;
-
-        // Activar la animación cuando el último punto esté en el viewport
-        if (lastPointOffset < window.innerHeight * 0.75) {
-          pointsAnimation.play();
-        }
-      }
-    };
-
-    // Agregar el evento de scroll
-    window.addEventListener("scroll", handleScroll);
-
-    // Limpia el evento cuando el componente se desmonte
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+    if (inView) {
+      // Animar los elementos Paper cuando estén en el campo de visión
+      anime({
+        targets: paperRefs.current,
+        translateY: [100, 0],
+        opacity: [0, 1],
+        duration: 1000,
+        easing: "easeOutQuad",
+        delay: anime.stagger(100),
+      });
+    }
+  }, [inView]);
 
   return (
-    <div className="bg-gradient-to-r from-green-500 to-black min-h-screen py-12">
-      <div className="container mx-auto text-center">
+  <div className="bg-[#28ac01] bg-opacity-20 py-6" style={{ position: "relative", overflow: "hidden" }}>
+      {/* Div con video de fondo */}
+      <div className="video-background">
+        <video autoPlay loop muted playsInline className="video">
+          {/* Ruta al video en la carpeta "public" */}
+          <source src="/fondo-div-seg.mp4" type="video/mp4" />
+          Tu navegador no admite el elemento de video.
+        </video>
+      </div>
+
+      <div className="container mx-auto text-center" style={{ position: "relative" }}>
         <Grid container spacing={4}>
           {points.map((point, index) => (
             <Grid key={index} item xs={12} md={4}>
-              <Paper className="py-4 px-6 rounded-lg hover:shadow-lg point">
+              <div ref={(element) => (paperRefs.current[index] = element)}>
+              <Paper elevation={5} className="py-4 px-6 rounded-lg h-full" ref={ref}>
                 {point.icon}
                 <Typography variant="h6" className="text-white mb-2">
                   {point.title}
                 </Typography>
-                <Typography variant="body2" className="text-black">
+                <Typography variant="body2" className="text-black text-justify">
                   {point.description}
                 </Typography>
               </Paper>
+              </div>
             </Grid>
           ))}
         </Grid>
       </div>
+
+      <style jsx>
+        {`
+          /* Estilo para el div de video de fondo */
+          .video-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.7; /* Baja opacidad */
+          }
+
+          /* Estilo para el video */
+          .video {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+          }
+        `}
+      </style>
     </div>
   );
 }

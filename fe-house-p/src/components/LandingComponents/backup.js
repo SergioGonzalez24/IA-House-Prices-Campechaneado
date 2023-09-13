@@ -7,39 +7,40 @@ import Image from "next/image";
 
 import {
   phone_035,
-  degradado,
-  backF1Sec,
   google,
   appstore,
 } from "@/assets/images";
 
+
+
 export default function FirstSection() {
   return (
     <Box
-      sx={{
-        bgcolor: "#fff",
-        overflow: "hidden",
-        border: '1px dashed grey'
-      }}
+    sx={{
+      backgroundColor: "rgba(255, 255, 255, 0.1)", // Fondo semi-transparente
+      overflow: "hidden",
+    }}
     >
       <Grid container spacing={2}>
         <Grid item xs={12} md={6}>
           {" "}
           {/*style={{ border: '1px dashed grey' }*/}
-          <Container style={{ marginTop: "10px", paddingTop: "50px" }}>
+          <Container style={{ marginTop: "10px", paddingTop: "50px", marginLeft: "50px" }}>
             <Box sx={{ flexGrow: 1 }}>
               <Typography variant="h5" style={{ color: "#181818" }}>
                 HOUSEA
               </Typography>
 
               <Typography variant="h3" style={{ color: "#181818" }}>
-                TU INVERSIÓN INTELIGENTE
+                TU INVERSIÓN 
+                
+                INTELIGENTE
               </Typography>
 
               <Typography
                 variant="body1"
                 paragraph
-                style={{ color: "#181818" }}
+                style={{ color: "#181818", paddingRight: "20px",maxWidth: "600px"}}
               >
                 Nuestra plataforma combina el poder del crowdfunding con la
                 precisión de la inteligencia artificial para llevar tus
@@ -54,7 +55,7 @@ export default function FirstSection() {
                   style={{
                     backgroundColor: "#28ac01",
                     color: "#FFFFFF",
-                    marginBottom: "10px",
+                    marginBottom: "1px",
                   }}
                 >
                   Empieza ahora
@@ -82,11 +83,12 @@ export default function FirstSection() {
                   item
                   xs={3}
                   style={{
-                    border: "1px dashed grey",
+                    // border: "1px dashed grey",
                     display: "flex",
                     alignItems: "center",
                   }}
                 >
+
                   <a
                     href="ENLACE_DE_APP_STORE"
                     target="_blank"
@@ -99,14 +101,9 @@ export default function FirstSection() {
                     <Image
                       src={appstore}
                       alt="Descargar en App Store"
-                      style={{
-                        width: "83%", // Asegura que ambas imágenes tengan el mismo ancho
-                        height: "auto",
-                        position: "relative",
-                        right: 20,
-                      }}
                     />
                   </a>
+
                 </Grid>
 
                 {/* Segunda imagen */}
@@ -114,11 +111,13 @@ export default function FirstSection() {
                   item
                   xs={3}
                   style={{
-                    border: "1px dashed grey",
+                    // border: "1px dashed grey",
                     display: "flex",
                     alignItems: "center",
                   }}
                 >
+                  
+
                   <a
                     href="ENLACE_DE_GOOGLE_PLAY"
                     target="_blank"
@@ -131,14 +130,11 @@ export default function FirstSection() {
                     <Image
                       src={google}
                       alt="Descargar en Google Play Store"
-                      style={{
-                        width: "100%", // Asegura que ambas imágenes tengan el mismo ancho
-                        height: "auto",
-                        position: "relative",
-                        right: 20,
-                      }}
                     />
                   </a>
+
+                  
+
                 </Grid>
               </Grid>
             </Box>
@@ -149,16 +145,19 @@ export default function FirstSection() {
           {" "}
           {/*border: '1px dashed grey', */}
           <Container>
-            <Image
-              src={degradado}
+            <video
+              src="/degradadoVid.mp4" // Notice the path here starts with a "/"
               alt="degradado"
               style={{
                 position: "relative",
                 top: 0,
                 left: 130,
                 width: "100%",
-                opacity: 0.5,
+                opacity: 0.8,
               }}
+              autoPlay
+              loop
+              muted
             />
             <Image
               src={phone_035}
