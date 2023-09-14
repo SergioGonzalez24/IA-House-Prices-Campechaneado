@@ -61,10 +61,10 @@ export default function Navbar() {
       :
         <nav className="bg-white sticky top-0 w-full z-20 border-b border-gray-200 hidden md:block" tyle={{position:"fixed",zIndex:"1"}}>
           <div className=" flex items-center justify-between p-4 mx-[50px] lg:mx-[100px] ">
-            <a href="https://flowbite.com/" className="flex items-center">
+            <Link href="/" className="flex items-center">
                 <Image src={logo_housea} className="w-[50px]" alt="Housea logo"></Image>
                 <span className="self-center text-[1.3rem] whitespace-nowrap ">HOUSEA</span>
-            </a>
+            </Link>
             <div className="items-center justify-between">
               <ul className="flex p-4 gap-[40px] content-center text-[1rem]">
                 <li>
