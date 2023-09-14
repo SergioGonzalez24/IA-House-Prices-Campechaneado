@@ -25,7 +25,7 @@ export default function Navbar() {
           <div className=" flex flex-wrap items-center justify-between p-4 mx-[20px] lg:mx-[100px] ">
             <a href="https://flowbite.com/" className="flex items-center">
                 <Image src={logo_housea} className="w-[50px]" alt="Housea logo"></Image>
-                <span className="self-center text-[1.3rem] whitespace-nowrap text-[1rem] lg:text-[1.3rem]">HOUSEA</span>
+                <span className="self-center text-[1.3rem] whitespace-nowrap lg:text-[1.3rem]">HOUSEA</span>
             </a>
             <div className="flex md:order-2">
               <div className="flex gap-[10px]">
