@@ -2,16 +2,12 @@
 import Image from "next/image";
 import { logo_housea } from "@/assets/images";
 import {GoHome} from "react-icons/go";
-import {AiOutlineHeart} from "react-icons/ai";
 import {AiOutlineSearch} from "react-icons/ai";
 import {AiOutlineUser} from "react-icons/ai"
 import Link from "next/link";
 import { usePathname } from 'next/navigation'
 import isMobile from "is-mobile";
 import { useRouter } from 'next/navigation'
-import { useEffect, useState } from "react";
-import {FiMenu} from "react-icons/fi"
-import {RxCross2} from "react-icons/rx"
 import {BiBriefcaseAlt} from "react-icons/bi"
 
 
@@ -46,10 +42,10 @@ export default function Navbar() {
             <div className="items-center justify-between" id="navbar-sticky">
               <ul className="flex p-4 md:p-0 gap-[30px] content-center text-[0.8rem] lg:text-[1rem]">
                 <li>
-                  <a href="">INICIO</a>
+                  <a href="#inicio">INICIO</a>
                 </li>
                 <li>
-                  <a>TECNOLOGÍAS</a>
+                  <a href="#tecnologia">TECNOLOGÍAS</a>
                 </li>
                 <li>
                   <a>USUARIOS</a>

@@ -1,5 +1,9 @@
+import { PageContainer } from "@/components/AppComponents";
+
 export default function Misproyectos() {
-    return (
-        <h1>Mis proy</h1>
-    );
+  return (
+    <PageContainer>
+
+    </PageContainer>
+  );
 }
