@@ -3,7 +3,8 @@ import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Responsi
 
 export default function GraphTime({data}) {
     return (
-        <ResponsiveContainer width="90%" height="100%">
+      <>
+        <ResponsiveContainer width="100%" height="100%" >
           <LineChart
             data={data}
             margin={{
@@ -18,8 +19,9 @@ export default function GraphTime({data}) {
             <YAxis />
             <Tooltip />
             <Legend />
-            <Line dataKey="precio" stroke="#AA870F" activeDot={{ r: 8 }} />
+            <Line dataKey="precio" stroke="#BF113E" activeDot={{ r: 8 }} />
           </LineChart>
         </ResponsiveContainer>
+      </>
       );
 }
