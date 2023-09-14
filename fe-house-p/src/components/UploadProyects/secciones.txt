@@ -1,0 +1,46 @@
+// Definición de secciones del formulario
+  const sections = [
+    [
+      { id: "lotarea", label: "Lot Area" },
+      { id: "overallqual", label: "Overall Quality" },
+      { id: "overallcond", label: "Overall Condition" },
+      { id: "yearbuilt", label: "Year Built" },
+      { id: "yearremodadd", label: "Year Remodeled" },
+    ],
+    [
+      { id: "bsmtfinsf1", label: "Basement Finish 1" },
+      { id: "bsmtfinsf2", label: "Basement Finish 2" },
+      { id: "bsmtunfsf", label: "Unfinished Basement" },
+      { id: "totalbsmtsf", label: "Total Basement SF" },
+      { id: "_1stflrsf", label: "First Floor SF" },
+    ],
+    [
+      { id: "_2ndflrsf", label: "Second Floor SF" },
+      { id: "lowqualfinsf", label: "Low Quality Finish SF" },
+      { id: "grlivarea", label: "Above Ground Living Area" },
+      { id: "bsmtfullbath", label: "Basement Full Bath" },
+      { id: "fullbath", label: "Full Bath" },
+    ],
+    [
+      { id: "halfbath", label: "Half Bath" },
+      { id: "bedroomabvgr", label: "Bedrooms Above Grade" },
+      { id: "kitchenabvgr", label: "Kitchens Above Grade" },
+      { id: "totrmsabvgrd", label: "Total Rooms Above Grade" },
+      { id: "fireplaces", label: "Fireplaces" },
+    ],
+    [
+      { id: "garagecars", label: "Garage Cars" },
+      { id: "garagearea", label: "Garage Area" },
+      { id: "wooddecksf", label: "Wood Deck Area" },
+      { id: "openporchsf", label: "Open Porch Area" },
+      { id: "enclosedporch", label: "Enclosed Porch Area" },
+    ],
+    [
+      { id: "_3ssnporch", label: "Three Season Porch Area" },
+      { id: "screenporch", label: "Screen Porch Area" },
+      { id: "poolarea", label: "Pool Area" },
+      { id: "miscval", label: "Miscellaneous Value" },
+      { id: "mosold", label: "Month Sold" },
+    ],
+    [{ id: "yrsold", label: "Year Sold" }],
+  ];
