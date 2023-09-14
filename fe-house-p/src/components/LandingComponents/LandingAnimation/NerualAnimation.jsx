@@ -10,6 +10,14 @@ export default function NeuralAnimation({ onAnimationComplete }) {
 
   const handleClick = () => {
     setAnimationCompleted(true);
+  
+    // Remove the canvas after a delay of 1000 ms
+    setTimeout(() => {
+      const container = containerRef.current;
+      if (container.childNodes.length > 0) {
+        container.removeChild(container.childNodes[0]);
+      }
+    }, 1000);
   };
 
   useEffect(() => {

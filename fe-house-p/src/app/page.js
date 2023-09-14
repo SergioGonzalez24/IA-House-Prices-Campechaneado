@@ -1,5 +1,5 @@
 'use client';
-import { FirstSection, SecondSection, ThirdSection } from "@/components/LandingComponents";
+import { FirstSection, SecondSection, ThirdSection, FourthSection } from "@/components/LandingComponents";
 
 export default function Home() {
   return (
@@ -17,6 +17,11 @@ export default function Home() {
       <section>
         {/* Contenido de la página */}
         <ThirdSection />
+      </section>
+
+      <section>
+        {/* Contenido de la página */}
+        <FourthSection />
       </section>
 
       
