@@ -21,7 +21,7 @@ export default function Navbar() {
     <>
     {
       pathname == "/" ?
-        <nav className="bg-white sticky top-0 w-full z-20 border-b border-gray-200 hidden md:block" style={{position:"fixed",zIndex:1}}>
+        <nav className="bg-white sticky top-0 w-full border-b border-gray-200 hidden md:block" style={{position:"fixed",zIndex:1}}>
           <div className=" flex flex-wrap items-center justify-between p-4 mx-[20px] lg:mx-[100px] ">
             <a href="https://flowbite.com/" className="flex items-center">
                 <Image src={logo_housea} className="w-[50px]" alt="Housea logo"></Image>
