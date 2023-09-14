@@ -33,7 +33,8 @@ class MyWebView extends StatelessWidget {
         backgroundColor: Colors.black,
       ),
       body: const WebView(
-        initialUrl: 'http://localhost:3000/agregarproyecto', // stage
+        initialUrl:
+            'https://housea-git-dev-sergiogonzalez24.vercel.app/home', // stage
         javascriptMode:
             JavascriptMode.unrestricted, // Habilita la ejecución de JavaScript
       ),
