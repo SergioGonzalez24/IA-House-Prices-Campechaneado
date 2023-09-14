@@ -20,6 +20,7 @@ export default function UploadProyects() {
     descripcion: "",
     fechaLimite: "",
     meta: "",
+    precioEstimado: "",
 
     calle: "",
     ciudad: "",
@@ -69,6 +70,8 @@ export default function UploadProyects() {
   const [selectedImage, setSelectedImage] = useState(null);
   const [openPreview, setOpenPreview] = useState(false);
 
+  const [responseText, setResponseText] = useState('');
+
   // Definición de secciones del formulario
   const sections = [
     [
@@ -76,6 +79,7 @@ export default function UploadProyects() {
         { id: "descripcion", label: "Descripción" },
         { id: "fechaLimite", label: "Fecha Límite" },
         { id: "meta", label: "Meta" },
+        { id: "precioEstimado", label: "Precio Estimado" },
     ],
     [
         { id: "calle", label: "Calle" },
@@ -189,16 +193,16 @@ export default function UploadProyects() {
   };
 
   // Manejador para enviar el formulario
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     // Crear un objeto para almacenar los enlaces de las imágenes
     const imageLinks = {};
-
+  
     const dataToStore = {
       lotarea: formData.lotarea,
       overallqual: formData.overallqual,
       // Agrega todas las propiedades que quieras guardar
     };
-
+  
     // Obtener enlaces de la sessionStorage y agregarlos al objeto
     for (let i = 0; i < files.length; i++) {
       const fileName = files[i].name;
@@ -207,22 +211,45 @@ export default function UploadProyects() {
         imageLinks[fileName] = imageLink;
       }
     }
-
+  
     // Combinar los datos del formulario con los enlaces de las imágenes
     const formDataWithLinks = {
       ...formData,
       imageLinks,
     };
-
+  
     // Mostrar un mensaje de confirmación
     const confirmed = window.confirm("¿Estás seguro de enviar tus datos?");
-
+  
     if (confirmed) {
       // Enviar los datos como JSON a la consola
       console.log(JSON.stringify(formDataWithLinks, null, 2));
-
-      // Recargar la página después de la confirmación
-    //   window.location.reload();
+  
+      try {
+        const url = 'http://10.48.90.166:8080/modelo';
+        const requestData = JSON.stringify(formDataWithLinks, null, 2);
+  
+        const response = await fetch(url, {
+          method: 'POST',
+          body: requestData,
+          headers: {
+            'Content-Type': 'application/json', // Especifica el tipo de contenido JSON
+          },
+        });
+  
+        if (response.ok) {
+          const responseData = await response.text();
+          setResponseText(responseData);
+          console.log("respuesta",responseData);
+          // Aquí puedes realizar cualquier acción adicional después de una respuesta exitosa
+        } else {
+          console.error('Error en la solicitud:', response.status, response.statusText);
+          console.log(JSON.stringify(formDataWithLinks, null, 2));
+        }
+      } catch (error) {
+        // Manejar errores aquí
+        console.error('Error:', error);
+      }
     }
   };
 
