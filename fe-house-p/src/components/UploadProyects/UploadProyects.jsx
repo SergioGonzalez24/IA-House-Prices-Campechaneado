@@ -223,7 +223,7 @@ export default function UploadProyects() {
   
     if (confirmed) {
       // Enviar los datos como JSON a la consola
-      console.log(JSON.stringify(formDataWithLinks, null, 2));
+      // console.log(JSON.stringify(formDataWithLinks, null, 2));
   
       try {
         const url = 'http://10.48.90.166:8080/modelo';
@@ -244,7 +244,6 @@ export default function UploadProyects() {
           // Aquí puedes realizar cualquier acción adicional después de una respuesta exitosa
         } else {
           console.error('Error en la solicitud:', response.status, response.statusText);
-          console.log(JSON.stringify(formDataWithLinks, null, 2));
         }
       } catch (error) {
         // Manejar errores aquí
