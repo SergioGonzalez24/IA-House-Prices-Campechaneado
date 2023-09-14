@@ -13,6 +13,7 @@ export default function Proyecto({params}) {
   const [proyecto_id, setProyecto_id] = useState(0);
   const [proyecto_data, setProyecto_data] = useState({});
   const [graph_data, setGraph_data] = useState({});
+  const [style_bar, setStyle_bar] = useState("");
 
   // Cargar datos del proyecto
   useEffect(() => {
@@ -31,6 +32,8 @@ export default function Proyecto({params}) {
     }
 
     setGraph_data(graph_d);
+
+    setStyle_bar(`s`)
 
   }, []);
     
@@ -73,9 +76,7 @@ export default function Proyecto({params}) {
             <div>
             {Math.round(proyecto_data.fondos_recaudados * 100 / proyecto_data.meta_recaudacion)}
               { Object.keys(proyecto_data).length !== 0 &&
-                <ProgressBar 
-                  max={proyecto_data.meta_recaudacion.toLocaleString("en-US")}
-                  pc={0}></ProgressBar>
+                <ProgressBar max={proyecto_data.meta_recaudacion.toLocaleString("en-US")} pc={Math.round(proyecto_data.fondos_recaudados * 100 / proyecto_data.meta_recaudacion)}></ProgressBar>
               }
             </div>
           </div>

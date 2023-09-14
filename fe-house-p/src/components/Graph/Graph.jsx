@@ -3,7 +3,7 @@ import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Responsi
 
 export default function GraphTime({data}) {
     return (
-        <ResponsiveContainer width="95%" height="100%">
+        <ResponsiveContainer width="90%" height="100%">
           <LineChart
             data={data}
             margin={{
