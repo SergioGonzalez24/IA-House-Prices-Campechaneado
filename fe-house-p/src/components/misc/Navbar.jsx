@@ -62,7 +62,7 @@ export default function Navbar() {
           </div>
         </nav>
       :
-        <nav className="bg-white sticky top-0 w-full z-20 border-b border-gray-200 hidden md:block">
+        <nav className="bg-white sticky top-0 w-full z-20 border-b border-gray-200 hidden md:block" tyle={{position:"fixed",zIndex:"1"}}>
           <div className=" flex items-center justify-between p-4 mx-[50px] lg:mx-[100px] ">
             <a href="https://flowbite.com/" className="flex items-center">
                 <Image src={logo_housea} className="w-[50px]" alt="Housea logo"></Image>
