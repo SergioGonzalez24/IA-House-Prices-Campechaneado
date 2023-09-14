@@ -183,7 +183,7 @@ export default function FirstSection() {
                 left: 100, // Alinea la parte izquierda de "phone" con la parte izquierda del contenedor
                 //right: 10,
                 width: "auto", // Ajusta el ancho de "phone" al 100% para que coincida con el contenedor
-                height: "100%", // Permite que la altura se ajuste automáticamente para mantener la proporción
+                height: "125%", // Permite que la altura se ajuste automáticamente para mantener la proporción
                 marginTop: "0px",
                 marginBottom:"1px"
                 
