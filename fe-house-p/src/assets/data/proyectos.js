@@ -1,4 +1,6 @@
-const lista_proyectos = {
+
+
+let lista_proyectos = {
     "1":{
     
     "titulo": "Casa Moderna en la Montaña",
@@ -1250,6 +1252,15 @@ const lista_proyectos = {
     }
     }
 }
+
+
+
+function addProyecto(n_proy) {
+    let longi = Object.keys(lista_proyectos).length
+
+    lista_proyectos[longi + 1] = n_proy
+}
   
 
 export default lista_proyectos;
+export {addProyecto}
