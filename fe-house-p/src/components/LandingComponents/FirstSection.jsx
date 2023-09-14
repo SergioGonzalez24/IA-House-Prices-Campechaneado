@@ -9,6 +9,7 @@ import {
   phone_035,
   google,
   appstore,
+  iphn,
 } from "@/assets/images";
 
 
@@ -20,7 +21,8 @@ export default function FirstSection() {
         height: "100%",
         overflow: "hidden",
         position: "relative",
-        marginTop: "90px",
+        marginTop: "50px",
+        paddingTop: "90px",
         marginBottom: "1px",
         marginLeft: "30px",
         padding: "10px",
@@ -173,14 +175,16 @@ export default function FirstSection() {
               muted
             />
             <Image
-              src={phone_035}
+              src={iphn}
+              // src={phone_035}
               alt="phone"
               style={{
                 position: "absolute", // Establece la posición absoluta para superponer la imagen de "phone"
                 top: 0, // Alinea la parte superior de "phone" con la parte superior del contenedor
-                left: -100, // Alinea la parte izquierda de "phone" con la parte izquierda del contenedor
-                width: "90%", // Ajusta el ancho de "phone" al 100% para que coincida con el contenedor
-                height: "auto", // Permite que la altura se ajuste automáticamente para mantener la proporción
+                left: 100, // Alinea la parte izquierda de "phone" con la parte izquierda del contenedor
+                //right: 10,
+                width: "auto", // Ajusta el ancho de "phone" al 100% para que coincida con el contenedor
+                height: "125%", // Permite que la altura se ajuste automáticamente para mantener la proporción
                 marginTop: "0px",
                 marginBottom:"1px"
                 
