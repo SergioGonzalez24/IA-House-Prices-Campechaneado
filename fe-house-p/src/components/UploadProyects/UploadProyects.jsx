@@ -232,7 +232,7 @@ const handleSubmit = () => {
             name={field.id}
             value={formData[field.id]}
             onChange={handleInputChange}
-            sx={{ marginBottom: "16px" }}
+            sx={{ marginBottom: "16px"}}
           />
         ))}
       </div>
