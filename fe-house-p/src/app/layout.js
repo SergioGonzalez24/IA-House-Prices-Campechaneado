@@ -13,7 +13,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
 
   return (
-    <html lang="esp">
+    <html lang="esp" className="scroll-smooth">
       <head>
         <meta charSet="utf-8" />
         <link rel="icon" href="/favicon.ico" />

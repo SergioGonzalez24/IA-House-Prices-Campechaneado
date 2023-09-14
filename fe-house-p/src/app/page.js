@@ -4,12 +4,12 @@ import { FirstSection, SecondSection, ThirdSection, FourthSection } from "@/comp
 export default function Home() {
   return (
     <div>
-      <section>
+      <section id="inicio">
         {/* Portada de la página */}
         <FirstSection />
       </section>
 
-      <section>
+      <section id="tecnologia">
         {/* Contenido de la página */}
         <SecondSection />
       </section>
