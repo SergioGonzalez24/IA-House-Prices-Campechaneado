@@ -1,5 +1,5 @@
 'use client';
-import { FirstSection, SecondSection, ThirdSection } from "@/components/LandingComponents";
+import { FirstSection, SecondSection, ThirdSection, FourthSection } from "@/components/LandingComponents";
 
 export default function Home() {
   return (
@@ -19,21 +19,12 @@ export default function Home() {
         <ThirdSection />
       </section>
 
+      <section>
+        {/* Contenido de la página */}
+        <FourthSection />
+      </section>
+
       
     </div>
   );
 }
-
-
-
-
-/* 
-<style jsx>{`
-        @media screen and (min-width: 900px) {
-          section {
-            padding-top: 100px; /* Ajusta el espaciado aquí según tus necesidades 
-            padding-bottom: 190px; /* Ajusta el espaciado aquí según tus necesidades 
-          }
-        }
-      `}
-      </style> */

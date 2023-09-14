@@ -33,7 +33,7 @@ export default function FirstSection() {
           item
           xs={12}
           md={6}
-          style={{ zIndex: -1 }}
+          style={{ zIndex: 0 }}
         >
           <Container style={{ marginTop:"70px", marginBottom:"80px"}}>
             <Box sx={{ flexGrow: 1, height: "100%", paddingTop:"20px", paddingBottom:"20px"}}>
