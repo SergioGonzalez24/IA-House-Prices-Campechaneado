@@ -3,10 +3,12 @@ import { PageContainer } from "@/components/AppComponents";
 import { ProjectCard } from "@/components/ProjectCard";
 import proyectos from "@/assets/data/proyectos";
 import {AiOutlineSearch} from "react-icons/ai"
+import { addProyecto } from "@/assets/data/proyectos";
 
 
 
 export default function Home() {
+
   return (
     <PageContainer>
       <h1 className="mb-2 text-[1.5rem]">Encuentra el proyecto que mejor se adapte a tus necesidades de inversion</h1>
@@ -15,7 +17,7 @@ export default function Home() {
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
         {
-          Object.keys(proyectos).map((key) => {
+          Object.keys(proyectos).reverse().map((key) => {
             return <ProjectCard key={key} id={key} data={proyectos[key]}></ProjectCard>
           })
         }
