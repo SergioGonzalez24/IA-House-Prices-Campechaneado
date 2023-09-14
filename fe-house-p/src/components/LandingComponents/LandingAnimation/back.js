@@ -20,10 +20,9 @@ export default function NeuralAnimation({ onAnimationComplete }) {
     const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
     camera.position.z = 5;
 
-
     // Create a renderer
     const renderer = new THREE.WebGLRenderer();
-    renderer.setSize(window.innerWidth, 740); // Cambia 400 y 300 a las dimensiones que desees
+    renderer.setSize(window.innerWidth, window.innerHeight); // Cambia 400 y 300 a las dimensiones que desees
     renderer.setClearColor(0xffffff, 0); // Cambia el color de fondo a blanco
     containerRef.current.appendChild(renderer.domElement);
 
@@ -31,16 +30,16 @@ export default function NeuralAnimation({ onAnimationComplete }) {
     const node_material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
     const node_geometry = new THREE.SphereGeometry(0.05, 32, 32); // Tamaño más pequeño
 
-    const numNodes = 300; // Cantidad de nodos en el bosque
+    const numNodes = 100; // Cantidad de nodos en el bosque
     const nodes = []; // Almacenar nodos en un arreglo
     const maxConnectionsPerNode = 2; // Máximo 2 conexiones por nodo
 
     for (let i = 0; i < numNodes; i++) {
       const node = new THREE.Mesh(node_geometry, node_material);
       // Genera posiciones aleatorias para los nodos dentro de un rango
-      node.position.x = (Math.random() - 0.5) * 8;
-      node.position.y = (Math.random() - 0.5) * 8;
-      node.position.z = (Math.random() - 0.5) * 8;
+      node.position.x = (Math.random() - 0.5) * 5;
+      node.position.y = (Math.random() - 0.5) * 5;
+      node.position.z = (Math.random() - 0.5) * 5;
       scene.add(node);
       nodes.push(node);
     }
@@ -127,7 +126,7 @@ export default function NeuralAnimation({ onAnimationComplete }) {
     ref={containerRef}
     className={`neural-animation ${animationCompleted ? '' : 'animate-entrance'}`}
     onClick={handleClick}
-    style={{ backgroundColor: 'black', height:"100%", width:"auto"}} // Cambiar el color de fondo a rosa
+    style={{ backgroundColor: 'pink' }} // Cambiar el color de fondo a rosa
   >
     {/* Contenido del componente */}
   </div>

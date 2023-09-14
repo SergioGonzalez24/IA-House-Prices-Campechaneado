@@ -23,17 +23,3 @@ export default function Home() {
     </div>
   );
 }
-
-
-
-
-/* 
-<style jsx>{`
-        @media screen and (min-width: 900px) {
-          section {
-            padding-top: 100px; /* Ajusta el espaciado aquí según tus necesidades 
-            padding-bottom: 190px; /* Ajusta el espaciado aquí según tus necesidades 
-          }
-        }
-      `}
-      </style> */
