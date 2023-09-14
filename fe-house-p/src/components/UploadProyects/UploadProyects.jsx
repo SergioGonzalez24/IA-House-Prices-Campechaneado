@@ -16,6 +16,15 @@ import DialogContent from "@mui/material/DialogContent";
 export default function UploadProyects() {
   // Estado para los datos del formulario
   const [formData, setFormData] = useState({
+    titulo: "",
+    descripcion: "",
+    fechaLimite: "",
+    meta: "",
+
+    calle: "",
+    ciudad: "",
+    codigoPostal: "",
+    
     lotarea: "",
     overallqual: "",
     overallcond: "",
@@ -62,6 +71,17 @@ export default function UploadProyects() {
 
   // Definición de secciones del formulario
   const sections = [
+    [
+        { id: "titulo", label: "Título" },
+        { id: "descripcion", label: "Descripción" },
+        { id: "fechaLimite", label: "Fecha Límite" },
+        { id: "meta", label: "Meta" },
+    ],
+    [
+        { id: "calle", label: "Calle" },
+        { id: "ciudad", label: "Ciudad" },
+        { id: "codigoPostal", label: "Código Postal" },
+    ], 
     [
       { id: "lotarea", label: "Lot Area" },
       { id: "overallqual", label: "Overall Quality" },
@@ -169,16 +189,16 @@ export default function UploadProyects() {
   };
 
   // Manejador para enviar el formulario
-const handleSubmit = () => {
+  const handleSubmit = () => {
     // Crear un objeto para almacenar los enlaces de las imágenes
     const imageLinks = {};
 
     const dataToStore = {
-        lotarea: formData.lotarea,
-        overallqual: formData.overallqual,
-        // Agrega todas las propiedades que quieras guardar
-      };
-  
+      lotarea: formData.lotarea,
+      overallqual: formData.overallqual,
+      // Agrega todas las propiedades que quieras guardar
+    };
+
     // Obtener enlaces de la sessionStorage y agregarlos al objeto
     for (let i = 0; i < files.length; i++) {
       const fileName = files[i].name;
@@ -187,22 +207,22 @@ const handleSubmit = () => {
         imageLinks[fileName] = imageLink;
       }
     }
-  
+
     // Combinar los datos del formulario con los enlaces de las imágenes
     const formDataWithLinks = {
       ...formData,
       imageLinks,
     };
-  
+
     // Mostrar un mensaje de confirmación
     const confirmed = window.confirm("¿Estás seguro de enviar tus datos?");
-  
+
     if (confirmed) {
       // Enviar los datos como JSON a la consola
       console.log(JSON.stringify(formDataWithLinks, null, 2));
-  
+
       // Recargar la página después de la confirmación
-      window.location.reload();
+    //   window.location.reload();
     }
   };
 
@@ -232,7 +252,7 @@ const handleSubmit = () => {
             name={field.id}
             value={formData[field.id]}
             onChange={handleInputChange}
-            sx={{ marginBottom: "16px"}}
+            sx={{ marginBottom: "16px" }}
           />
         ))}
       </div>
@@ -240,8 +260,9 @@ const handleSubmit = () => {
   };
 
   return (
-    <Paper elevation={3} sx={{ margin: "20px", padding: "20px" }}>
-      <Grid container spacing={2} justifyContent="center">
+    <Paper elevation={3} sx={{ margin: "20px", padding: "20px", zIndex:-1}}>
+
+<Grid container spacing={2} justifyContent="center">
         {/* Sección de indicador de paso */}
         <Grid item xs={12} md={16} sx={{ mb: 3 }}>
           <Stepper activeStep={currentSection - 1} alternativeLabel>
@@ -282,6 +303,8 @@ const handleSubmit = () => {
             sx={{
               backgroundColor: "#28ac01",
               "&:hover": { backgroundColor: "#28ac01" },
+              margin: "6px 6px 6px 6px",
+              padding: "8px 8px 8px 8px",
             }}
           >
             Subir Archivos
@@ -332,7 +355,11 @@ const handleSubmit = () => {
                       variant="outlined"
                       size="small"
                       onClick={() => handleFileDelete(index)}
-                      sx={{ mt: 1 }}
+                      sx={{
+                        mt: 1,
+                        margin: "6px 6px 6px 6px",
+                        padding: "8px 8px 8px 8px",
+                      }}
                     >
                       <DeleteIcon fontSize="small" />
                     </Button>
@@ -388,6 +415,9 @@ const handleSubmit = () => {
                     mt: 1,
                     backgroundColor: "#28ac01",
                     "&:hover": { backgroundColor: "#28ac01" },
+                    margin: "6px 6px 6px 6px",
+                    padding: "8px 8px 8px 8px",
+                    height: "100%",
                   }}
                 >
                   Anterior
@@ -405,6 +435,9 @@ const handleSubmit = () => {
                   mt: 1,
                   backgroundColor: "#28ac01",
                   "&:hover": { backgroundColor: "#28ac01" },
+                  margin: "6px 6px 6px 6px",
+                  padding: "8px 8px 8px 8px",
+                  height: "100%",
                 }}
               >
                 {currentSection < sections.length ? "Siguiente" : "Enviar"}

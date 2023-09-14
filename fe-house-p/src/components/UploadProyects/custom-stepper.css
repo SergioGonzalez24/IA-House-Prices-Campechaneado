@@ -1,0 +1,13 @@
+/* CSS personalizado para los círculos del indicador de paso */
+.custom-step-root {
+    background-color: #28ac01; /* Cambiar el color a verde */
+  }
+  
+  .custom-step-active {
+    background-color: #28ac01; /* Cambiar el color a verde para el círculo actual */
+  }
+  
+  .custom-step-completed {
+    background-color: #28ac01; /* Cambiar el color a verde para los círculos completados */
+  }
+  
