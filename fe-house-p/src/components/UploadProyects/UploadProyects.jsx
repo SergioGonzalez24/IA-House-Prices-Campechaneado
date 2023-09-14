@@ -12,6 +12,7 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import Dialog from "@mui/material/Dialog";
 import DialogContent from "@mui/material/DialogContent";
+import { addProyecto } from "@/assets/data/proyectos";
 
 export default function UploadProyects() {
   // Estado para los datos del formulario
@@ -25,7 +26,7 @@ export default function UploadProyects() {
     calle: "",
     ciudad: "",
     codigoPostal: "",
-    
+
     lotarea: "",
     overallqual: "",
     overallcond: "",
@@ -70,65 +71,219 @@ export default function UploadProyects() {
   const [selectedImage, setSelectedImage] = useState(null);
   const [openPreview, setOpenPreview] = useState(false);
 
-  const [responseText, setResponseText] = useState('');
+  const [responseText, setResponseText] = useState("");
 
   // Definición de secciones del formulario
+
   const sections = [
+    // Información básica
     [
-        { id: "titulo", label: "Título" },
-        { id: "descripcion", label: "Descripción" },
-        { id: "fechaLimite", label: "Fecha Límite" },
-        { id: "meta", label: "Meta" },
-        { id: "precioEstimado", label: "Precio Estimado" },
+      { id: "titulo", label: "Título" },
+      { id: "descripcion", label: "Descripción" },
+      { id: "fechaLimite", label: "Fecha Límite" },
+      { id: "meta", label: "Meta" },
+      { id: "precioEstimado", label: "Precio Estimado" },
     ],
+    // Ubicación
     [
-        { id: "calle", label: "Calle" },
-        { id: "ciudad", label: "Ciudad" },
-        { id: "codigoPostal", label: "Código Postal" },
-    ], 
+      { id: "calle", label: "Calle" },
+      { id: "ciudad", label: "Ciudad" },
+      { id: "codigoPostal", label: "Código Postal" },
+    ],
+    // Características del lote
     [
+      { id: "lotfrontage", label: "Frontage of the Lot" },
       { id: "lotarea", label: "Lot Area" },
       { id: "overallqual", label: "Overall Quality" },
       { id: "overallcond", label: "Overall Condition" },
       { id: "yearbuilt", label: "Year Built" },
-      { id: "yearremodadd", label: "Year Remodeled" },
     ],
+    // Año y remodelación
     [
+      { id: "yearremodadd", label: "Year Remodeled" },
+      { id: "masvnrarea", label: "Masonry Veneer Area" },
       { id: "bsmtfinsf1", label: "Basement Finish 1" },
       { id: "bsmtfinsf2", label: "Basement Finish 2" },
       { id: "bsmtunfsf", label: "Unfinished Basement" },
+    ],
+    // Superficie del sótano
+    [
       { id: "totalbsmtsf", label: "Total Basement SF" },
       { id: "_1stflrsf", label: "First Floor SF" },
-    ],
-    [
       { id: "_2ndflrsf", label: "Second Floor SF" },
       { id: "lowqualfinsf", label: "Low Quality Finish SF" },
       { id: "grlivarea", label: "Above Ground Living Area" },
-      { id: "bsmtfullbath", label: "Basement Full Bath" },
-      { id: "fullbath", label: "Full Bath" },
     ],
+    // Baños y habitaciones
     [
+      { id: "bsmtfullbath", label: "Basement Full Bath" },
+      { id: "bsmthalfbath", label: "Basement Half Bath" },
+      { id: "fullbath", label: "Full Bath" },
       { id: "halfbath", label: "Half Bath" },
       { id: "bedroomabvgr", label: "Bedrooms Above Grade" },
+    ],
+    [
       { id: "kitchenabvgr", label: "Kitchens Above Grade" },
       { id: "totrmsabvgrd", label: "Total Rooms Above Grade" },
       { id: "fireplaces", label: "Fireplaces" },
-    ],
-    [
+      { id: "garageyrblt", label: "Year Garage was Built" },
       { id: "garagecars", label: "Garage Cars" },
+    ],
+    // Garaje
+    [
       { id: "garagearea", label: "Garage Area" },
-      { id: "wooddecksf", label: "Wood Deck Area" },
-      { id: "openporchsf", label: "Open Porch Area" },
-      { id: "enclosedporch", label: "Enclosed Porch Area" },
+      { id: "wooddecksf", label: "Wood Deck SF" },
+      { id: "openporchsf", label: "Open Porch SF" },
+      { id: "enclosedporch", label: "Enclosed Porch" },
+      { id: "_3ssnporch", label: "Three Season Porch" },
+    ],
+    // Espacios exteriores
+    [
+      { id: "screenporch", label: "Screen Porch" },
+      { id: "poolarea", label: "Pool Area" },
+      { id: "miscval", label: "Misc Value" },
+      { id: "mosold", label: "Month Sold" },
+      { id: "yrsold", label: "Year Sold" },
+    ],
+    // Zonas y ubicación del lote
+    [
+      { id: "is_zone_lres", label: "Is Zone Low Res" },
+      { id: "is_zone_mres", label: "Is Zone Medium Res" },
+      { id: "is_zone_com", label: "Is Zone Commercial" },
+      { id: "is_zone_float", label: "Is Zone Floating" },
+      { id: "is_zone_hres", label: "Is Zone High Res" },
     ],
     [
-      { id: "_3ssnporch", label: "Three Season Porch Area" },
-      { id: "screenporch", label: "Screen Porch Area" },
-      { id: "poolarea", label: "Pool Area" },
-      { id: "miscval", label: "Miscellaneous Value" },
-      { id: "mosold", label: "Month Sold" },
+      { id: "is_land_lvl", label: "Is Land Level" },
+      { id: "is_land_bk", label: "Is Land Bank" },
+      { id: "is_land_low", label: "Is Land Low" },
+      { id: "is__land_hi", label: "Is Land High" },
+      { id: "is_lot_in", label: "Is Lot Inside" },
     ],
-    [{ id: "yrsold", label: "Year Sold" }],
+    [
+      { id: "is_lot_fr2", label: "Is Lot Frontage 2" },
+      { id: "is_lot_cor", label: "Is Lot Corner" },
+      { id: "is_lot_culdsac", label: "Is Lot Cul-De-Sac" },
+      { id: "is_fr3", label: "Is Frontage 3" },
+    ],
+    [
+      { id: "is_bldg_singlef", label: "Single Family Building" },
+      { id: "is_bldg_twof", label: "Two Family Building" },
+      { id: "is_bldg_du", label: "Duplex Building" },
+      { id: "is_bldg_townend", label: "Townhouse End Building" },
+      { id: "is_bldg_townins", label: "Townhouse Inside Building" },
+    ],
+    [
+      { id: "is_house_2story", label: "2-Story House" },
+      { id: "is_house_1story", label: "1-Story House" },
+      { id: "is_house_15fstory", label: "1.5-Story Front House" },
+      { id: "is_house_15ustory", label: "1.5-Story Unfinished House" },
+      { id: "is_house_splitfr", label: "Split Foyer House" },
+    ],
+    [
+      { id: "is_house_splitlvl", label: "Split Level House" },
+      { id: "is_house_25ustory", label: "2.5-Story Unfinished House" },
+    ],
+    // Tipo de techo y mampostería
+    [
+      { id: "is_roof_gable", label: "Gable Roof" },
+      { id: "is_roof_hip", label: "Hip Roof" },
+      { id: "is_roof_gambrel", label: "Gambrel Roof" },
+      { id: "is_roof_mansard", label: "Mansard Roof" },
+      { id: "is_roof_flat", label: "Flat Roof" },
+    ],
+    [
+      { id: "is_roof_shed", label: "Shed Roof" },
+      { id: "is_masn_brkface", label: "Brick Face Masonry" },
+      { id: "is_masn_none", label: "No Masonry" },
+      { id: "is_masn_stone", label: "Stone Masonry" },
+    ],
+    [
+      { id: "is_masn_brk", label: "Brick Masonry" },
+      { id: "is_masn_na", label: "Not Available Masonry" },
+    ],
+    // Fundación y garaje
+    [
+      { id: "is_foun_pconc", label: "Poured Concrete Foundation" },
+      { id: "is_foun_cblock", label: "Concrete Block Foundation" },
+      { id: "is_foun_brktil", label: "Brick & Tile Foundation" },
+      { id: "is_foun_wood", label: "Wood Foundation" },
+      { id: "is_foun_slab", label: "Slab Foundation" },
+    ],
+    [
+      { id: "is_foun_stone", label: "Stone Foundation" },
+      { id: "is_garage_attchd", label: "Attached Garage" },
+      { id: "is_garage_detchd", label: "Detached Garage" },
+      { id: "is_garage_builtin", label: "Built-in Garage" },
+    ],
+    [
+      { id: "is_garage_carport", label: "Carport Garage" },
+      { id: "is_garage_none", label: "No Garage" },
+      { id: "is_garage_basement", label: "Basement Garage" },
+      { id: "is_garage_2t", label: "2-Tier Garage" },
+    ],
+    // Venta y otras características
+    [
+      { id: "is_sale_wd", label: "Warranty Deed Sale" },
+      { id: "is_sale_new", label: "New Sale" },
+      { id: "is_sale_cod", label: "Court Officer Deed/Estate Sale" },
+      { id: "is_sale_conld", label: "Contract Low Down Sale" },
+      { id: "is_sale_conli", label: "Contract Low Interest Sale" },
+    ],
+    [
+      { id: "is_sale_cwd", label: "Contract Warranty Deed Sale" },
+      { id: "is_sale_conlw", label: "Contract Low Work Sale" }, // Not sure about this, adapt as needed.
+      { id: "is_sale_con", label: "Contract Sale" },
+      { id: "is_sale_oth", label: "Other Sale" },
+      { id: "is_salec_nom", label: "Normal Sale Condition" },
+    ],
+    [
+      { id: "is_salec_anom", label: "Abnormal Sale Condition" },
+      { id: "is_salec_p", label: "Partial Sale Condition" },
+      { id: "is_salec_adland", label: "Adjoining Land Purchase" },
+      { id: "is_salec_alloca", label: "Allocation Sale Condition" },
+      { id: "is_salec_f", label: "Family Sale Condition" },
+    ],
+    [
+      { id: "mssubclass", label: "Building Class" },
+      { id: "street", label: "Street Type" },
+      { id: "lotshape", label: "Lot Shape" },
+      { id: "utilities", label: "Utilities Type" },
+      { id: "landslope", label: "Land Slope" },
+    ],
+    [
+      { id: "exterqual", label: "External Quality" },
+      { id: "extercond", label: "External Condition" },
+      { id: "bsmtqual", label: "Basement Quality" },
+      { id: "bsmtcond", label: "Basement Condition" },
+      { id: "bsmtexposure", label: "Basement Exposure" },
+    ],
+    [
+      { id: "bsmtfintype1", label: "Basement Finish Type 1" },
+      { id: "bsmtfintype2", label: "Basement Finish Type 2" },
+      { id: "heatingqc", label: "Heating Quality and Condition" },
+      { id: "centralair", label: "Central Air" },
+      { id: "electrical", label: "Electrical System" },
+    ],
+    [
+      { id: "kitchenqual", label: "Kitchen Quality" },
+      { id: "functional", label: "Home Functionality" },
+      { id: "fireplacequ", label: "Fireplace Quality" },
+      { id: "garagefinish", label: "Garage Finish" },
+      { id: "garagequal", label: "Garage Quality" },
+    ],
+    [
+      { id: "garagecond", label: "Garage Condition" },
+      { id: "paveddrive", label: "Paved Driveway" },
+      { id: "fence", label: "Fence Quality" },
+      { id: "ext_id_2", label: "External Identifier 2" },
+      { id: "cond_id_2", label: "Condition Identifier 2" },
+    ],
+    [
+      { id: "neigh_id", label: "Neighborhood Identifier" },
+      { id: "cond_id_1", label: "Condition Identifier 1" },
+      { id: "ext_id_1", label: "External Identifier 1" },
+    ],
   ];
 
   // Manejador de cambio de entrada en el formulario
@@ -196,13 +351,13 @@ export default function UploadProyects() {
   const handleSubmit = async () => {
     // Crear un objeto para almacenar los enlaces de las imágenes
     const imageLinks = {};
-  
+
     const dataToStore = {
       lotarea: formData.lotarea,
       overallqual: formData.overallqual,
       // Agrega todas las propiedades que quieras guardar
     };
-  
+
     // Obtener enlaces de la sessionStorage y agregarlos al objeto
     for (let i = 0; i < files.length; i++) {
       const fileName = files[i].name;
@@ -211,43 +366,49 @@ export default function UploadProyects() {
         imageLinks[fileName] = imageLink;
       }
     }
-  
+
     // Combinar los datos del formulario con los enlaces de las imágenes
     const formDataWithLinks = {
       ...formData,
       imageLinks,
     };
-  
+
     // Mostrar un mensaje de confirmación
     const confirmed = window.confirm("¿Estás seguro de enviar tus datos?");
-  
+
     if (confirmed) {
       // Enviar los datos como JSON a la consola
       // console.log(JSON.stringify(formDataWithLinks, null, 2));
-  
+
       try {
-        const url = 'http://10.48.90.166:8080/modelo';
+        const url = "http://10.48.90.166:8080/modelo";
         const requestData = JSON.stringify(formDataWithLinks, null, 2);
-  
+
         const response = await fetch(url, {
-          method: 'POST',
+          method: "POST",
           body: requestData,
           headers: {
-            'Content-Type': 'application/json', // Especifica el tipo de contenido JSON
+            "Content-Type": "application/json", // Especifica el tipo de contenido JSON
           },
         });
-  
+
         if (response.ok) {
           const responseData = await response.text();
           setResponseText(responseData);
-          console.log("respuesta",responseData);
+          console.log("respuesta", responseData);
+          // addProyecto(responseData);
+          window.location.href = "/home";
           // Aquí puedes realizar cualquier acción adicional después de una respuesta exitosa
         } else {
-          console.error('Error en la solicitud:', response.status, response.statusText);
+          console.error(
+            "Error en la solicitud:",
+            response.status,
+            response.statusText
+          );
         }
       } catch (error) {
         // Manejar errores aquí
-        console.error('Error:', error);
+        console.error("Error:", error);
       }
     }
   };
@@ -286,13 +447,25 @@ export default function UploadProyects() {
   };
 
   return (
-    <Paper elevation={3} sx={{ margin: "20px", padding: "20px", zIndex:-1}}>
-
-<Grid container spacing={2} justifyContent="center">
+    <Paper elevation={3} sx={{ margin: "20px", padding: "20px", zIndex: -1 }}>
+      <Grid container spacing={2} justifyContent="center">
         {/* Sección de indicador de paso */}
-        <Grid item xs={12} md={16} sx={{ mb: 3 }}>
+        {/* <Grid item xs={12} md={16} sx={{ mb: 3 }}>
           <Stepper activeStep={currentSection - 1} alternativeLabel>
             {sections.map((section, index) => (
+              <Step key={index}>
+                <StepLabel>{`Sección ${index + 1}`}</StepLabel>
+              </Step>
+            ))}
+          </Stepper>
+        </Grid> */}
+
+        <Grid item xs={12} md={16} sx={{ mb: 3 }}>
+          <Stepper
+            activeStep={Math.min(9, currentSection - 1)}
+            alternativeLabel
+          >
+            {sections.slice(0, 10).map((section, index) => (
               <Step key={index}>
                 <StepLabel>{`Sección ${index + 1}`}</StepLabel>
               </Step>

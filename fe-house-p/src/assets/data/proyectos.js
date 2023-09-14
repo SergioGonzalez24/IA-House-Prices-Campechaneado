@@ -1,4 +1,6 @@
-const lista_proyectos = {
+
+
+let lista_proyectos = {
     "1":{
     
     "titulo": "Casa Moderna en la Montaña",
@@ -1250,6 +1252,20 @@ const lista_proyectos = {
     }
     }
 }
+
+
+
+function addProyecto(n_proy) {
+    let longi = Object.keys(lista_proyectos).length
+
+    lista_proyectos[longi + 1] = n_proy
+    // guarda los proyectos existentes mas el nuevo proyecto en el local storage
+    localStorage.setItem("lista_proyectos", JSON.stringify(lista_proyectos));
+
+    console.log(Object.keys(lista_proyectos).length); 
+    // window.location.href = "/home";
+}
   
 
 export default lista_proyectos;
+export {addProyecto};
