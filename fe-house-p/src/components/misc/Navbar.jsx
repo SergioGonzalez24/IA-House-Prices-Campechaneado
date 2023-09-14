@@ -3,12 +3,13 @@ import Image from "next/image";
 import { logo_housea } from "@/assets/images";
 import {GoHome} from "react-icons/go";
 import {AiOutlineSearch} from "react-icons/ai";
-import {AiOutlineUser} from "react-icons/ai"
+import {AiOutlineUser, AiOutlinePlus} from "react-icons/ai"
 import Link from "next/link";
 import { usePathname } from 'next/navigation'
 import isMobile from "is-mobile";
 import { useRouter } from 'next/navigation'
 import {BiBriefcaseAlt} from "react-icons/bi"
+
 
 
 export default function Navbar() {
@@ -70,10 +71,10 @@ export default function Navbar() {
                   <Link href="/home" className={"hover:text-[#208C00] hover:border-b-2 hover:border-[#208C00] " + (pathname == "/home" ? " text-[#208C00] font-semibold border-b-2 border-[#208C00]" : " text-black")}>INICIO</Link>
                 </li>
                 <li>
-                  <Link href="/search" className={"hover:text-[#208C00] hover:border-b-2 hover:border-[#208C00] " + (pathname == "/search" ? " text-[#208C00] font-semibold border-b-2 border-[#208C00]" : " text-black")}>BUSCAR</Link>
+                  <Link href="/home" className={"hover:text-[#208C00] hover:border-b-2 hover:border-[#208C00] " + (pathname == "/search" ? " text-[#208C00] font-semibold border-b-2 border-[#208C00]" : " text-black")}>BUSCAR</Link>
                 </li>
                 <li>
-                  <Link href="/misproyectos" className={"hover:text-[#208C00] hover:border-b-2 hover:border-[#208C00] " + (pathname == "/misproyectos" ? " text-[#208C00] font-semibold border-b-2 border-[#208C00]" : " text-black")}>MIS PROYECTOS</Link>
+                  <Link href="/agregarproyecto" className={"hover:text-[#208C00] hover:border-b-2 hover:border-[#208C00] " + (pathname == "/agregarproyecto" ? " text-[#208C00] font-semibold border-b-2 border-[#208C00]" : " text-black")}>PUBLICA TU PROYECTO</Link>
                 </li>
                 <li>
                   <Link href="/profile" className={"hover:text-[#208C00] hover:border-b-2 hover:border-[#208C00] " + (pathname == "/profile" ? " text-[#208C00] font-semibold border-b-2 border-[#208C00]" : " text-black")}>PERFIL</Link>
@@ -93,12 +94,12 @@ export default function Navbar() {
               <GoHome color={pathname == "/home" ? "#208C00" : "black"}></GoHome>
             </Link>
             <Link className="inline-flex flex-col items-center justify-center group text-[1.5rem]"
-               href="/search">
+               href="/home">
               <AiOutlineSearch color={pathname == "/search" ? "#208C00" : "black"}></AiOutlineSearch>
             </Link>
             <Link className="inline-flex flex-col items-center justify-center group text-[1.5rem]"
-               href="/misproyectos">
-              <BiBriefcaseAlt color={pathname == "/misproyectos" ? "#208C00" : "black"}></BiBriefcaseAlt>
+               href="/agregarproyecto">
+              <AiOutlinePlus color={pathname == "/agregarproyecto" ? "#208C00" : "black"}></AiOutlinePlus>
             </Link>
             <Link className="inline-flex flex-col items-center justify-center group text-[1.5rem]"
                href="/profile">
