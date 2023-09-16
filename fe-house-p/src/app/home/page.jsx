@@ -1,13 +1,23 @@
+'use client';
 import Link from "next/link";
 import { PageContainer } from "@/components/AppComponents";
 import { ProjectCard } from "@/components/ProjectCard";
 import proyectos from "@/assets/data/proyectos";
 import {AiOutlineSearch} from "react-icons/ai"
 import { addProyecto } from "@/assets/data/proyectos";
+import lista_proyectos  from "@/assets/data/proyectos";
+import { useEffect } from "react";
 
 
 
 export default function Home() {
+
+  useEffect(() => {
+    // imprime el localsotrage
+    console.log(localStorage.getItem("proyectos"))
+    // imprime el typo de proyecto en el localstorage
+    console.log(typeof localStorage.getItem("proyectos"))
+  }, [])
 
   return (
     <PageContainer>
