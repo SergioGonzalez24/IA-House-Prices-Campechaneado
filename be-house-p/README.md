@@ -11,46 +11,53 @@
 
 ## Índice
 
-- [Capturas de Pantalla](#capturas-de-pantalla)
 - [Requisitos Previos](#requisitos-previos)
 - [Instalación](#instalación)
 - [Configuración](#configuración)
 - [Uso](#uso)
 - [Contribuciones](#contribuciones)
 
-## Capturas de Pantalla
-
-![Captura de Pantalla 1](screenshots/screenshot1.png)
-*Descripción de la captura de pantalla 1.*
-
-![Captura de Pantalla 2](screenshots/screenshot2.png)
-*Descripción de la captura de pantalla 2.*
-
 ## Requisitos previos
 
 - Python 3.8+
 - Librerías:
     - Numpy
-    - Pandas
-    - Scikit-learn
+    - Flask
+    - Joblib
+    - Flask-cors
+- Asegurate de tener los archivos en el mismo directorio `app.py` y `arbol.joblib`.
 
 ## Instalación
    
 1. Numpy:
    ```bash
    pip install numpy
-   
+   ```
+
+2. Flask:
+   ```bash
+   pip install flask
+   ```
+
+3. Joblib:
+   ```bash
+   pip install joblib
+   ```
+
+4. Flask-cors:
+   ```bash
+   pip install Flask-Cors
+   ```
 
 ## Configuración
 
-- Configura la base de datos en `backend/config/database.js`.
-- Configura las variables de entorno en un archivo `.env` para mantener la información sensible segura.
+- Instalar librerias 
 
 ## Uso
 
-1. Inicia el servidor backend: `npm run start` en el directorio `backend`.
-2. Inicia la aplicación frontend: `npm run start` en el directorio `frontend`.
-3. Abre tu navegador y visita: `http://localhost:3000`.
+1. Inicia el servidor backend: `python app.py` en el directorio `be-house-p`.
+2. Inicia la aplicación frontend: `npm run start` en el directorio `fe-house-p`.
+3. Abre tu navegador y visita: `https://www.housea.systems/`.
 
 ## Contribuciones
 
