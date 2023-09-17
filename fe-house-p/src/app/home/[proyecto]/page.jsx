@@ -100,7 +100,7 @@ export default function Proyecto({params}) {
         <div className="bg-white mb-[50px] md:mb-[0px] flex flex-col py-[20px] px-[20px] md:py-[30px] md:px-[40px] rounded-[10px] gap-6 shadow-lg">
 
           <div className="w-[100%] h-[335px] flex flex-col gap-3 bg-gray-100 p-5 rounded-[10px]">
-            <span className="">Predicción del valor del proyecto</span>
+            <span className="">Predicción del valor del proyecto (crecimiento anual del 4.8%)</span>
             <GraphTime data={graph_data}></GraphTime>
           </div>
 
