@@ -34,9 +34,11 @@ Bienvenido al repositorio del proyecto de ventas de casas. Este proyecto tiene c
 ## Capturas de Pantalla
 
 ![Landing Page](img/Housea.png) 
+
 *Página principal de la aplicación, donde puedes encontar el objetivo pricnipal de nuestra aplicación y una vista en miniatura de esta misma vista desde un dispositivo celular.*
 
 ![Inicio de la página web](img/Housea_inicio.png)
+
 *En la pestaña de inicio encontraras los proyectos que esatn actualmente inscritos, teniendo una vista previa y una que otra característica de cada uno de los proyectos*
 
 ## Tecnologías Utilizadas

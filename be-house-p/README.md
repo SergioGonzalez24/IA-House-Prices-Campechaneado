@@ -5,9 +5,6 @@
 ![PyPI](https://img.shields.io/pypi/v/customtkinter)
 
 </div>
-<h2 align="center">
-:construction: Proyecto en construcción :construction:
-</h2>
 
 ## Índice
 
