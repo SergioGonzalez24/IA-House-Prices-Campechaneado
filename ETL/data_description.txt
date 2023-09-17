@@ -78,7 +78,7 @@ LandSlope: Slope of property. 1 Gentle - 3 Severe Slope
        Mod	Moderate Slope	
        Sev	Severe Slope
 	
-Neighborhood: Physical locations within Ames city limits. New table PENDING
+Neighborhood: Physical locations within Ames city limits. New table
 
        Blmngtn	Bloomington Heights
        Blueste	Bluestem
@@ -106,7 +106,7 @@ Neighborhood: Physical locations within Ames city limits. New table PENDING
        Timber	Timberland
        Veenker	Veenker
 			
-Condition1: Proximity to various conditions New Table PENDING
+Condition1: Proximity to various conditions New Table
 	
        Artery	Adjacent to arterial street
        Feedr	Adjacent to feeder street	
@@ -118,7 +118,7 @@ Condition1: Proximity to various conditions New Table PENDING
        RRNe	Within 200' of East-West Railroad
        RRAe	Adjacent to East-West Railroad
 	
-Condition2: Proximity to various conditions (if more than one is present) Upper Table PENDING
+Condition2: Proximity to various conditions (if more than one is present) Upper Table
 		
        Artery	Adjacent to arterial street
        Feedr	Adjacent to feeder street	
@@ -199,7 +199,7 @@ RoofMatl: Roof material. Drop Column
        WdShake	Wood Shakes
        WdShngl	Wood Shingles
 		
-Exterior1st: Exterior covering on house. Table PENDING
+Exterior1st: Exterior covering on house. Table
 
        AsbShng	Asbestos Shingles
        AsphShn	Asphalt Shingles
@@ -219,7 +219,7 @@ Exterior1st: Exterior covering on house. Table PENDING
        Wd Sdng	Wood Siding
        WdShing	Wood Shingles
 	
-Exterior2nd: Exterior covering on house (if more than one material). Upper Table PENDING
+Exterior2nd: Exterior covering on house (if more than one material). Upper Table
 
        AsbShng	Asbestos Shingles
        AsphShn	Asphalt Shingles
