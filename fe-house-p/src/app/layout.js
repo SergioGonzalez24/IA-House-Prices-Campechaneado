@@ -1,9 +1,7 @@
-"use client"
 import "../styles/globals.css";
 import { Inter } from "next/font/google";
 import Navbar from "@/components/misc/Navbar";
-import { createContext } from "react";
-import lista_proyectos from "@/assets/data/proyectos";
+
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -13,7 +11,7 @@ export const metadata = {
     "La propuesta de Housea busca revolucionar la forma en que los inversionistas y las constructoras abordan el mercado inmobiliario. Al combinar la predicción de inversiones, la intermediación eficiente, la optimización de proyectos y el acceso a inversiones de créditos, se crea un ecosistema completo que maximiza las oportunidades y minimiza los riesgos para todas las partes involucradas.",
 };
 
-export const lista_proy = createContext()
+
 
 export default function RootLayout({ children }) {
 
@@ -24,10 +22,8 @@ export default function RootLayout({ children }) {
         <link rel="icon" href="/favicon.ico" />
       </head>
       <body className={inter.className + " relative h-[100vh]"}>
-        <lista_proy.Provider value={lista_proyectos}>
           <Navbar/>
           {children}
-        </lista_proy.Provider>
       </body>
     </html>
   );
