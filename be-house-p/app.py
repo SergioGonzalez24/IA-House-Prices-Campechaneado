@@ -3,7 +3,6 @@ import numpy as np
 from joblib import load
 import os
 from flask_cors import CORS, cross_origin
-
 #Cargar el modelo
 dt=load('arbol.joblib')
 
@@ -51,12 +50,9 @@ def modeloPrediccion():
     x = []
     y = []
     if retorno_e > 4:
-        for i in range(2000, int(fecha[2]), 2):
-            entrada["yrsold"] = i
-            datosEntrada = np.array([float(entrada[key]) for key in cols])
-            pred=dt.predict(datosEntrada.reshape(1,-1))[0] * 20
-            x.append(pred)
-            y.append(i)
+        for i, year in enumerate(range(2020, 2028)):
+            x.append(pred + (pred * i * 0.048))
+            y.append(year)
 
         datos = {
             "id": 600,
