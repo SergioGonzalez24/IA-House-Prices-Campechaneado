@@ -33,16 +33,16 @@ Bienvenido al repositorio del proyecto de ventas de casas. Este proyecto tiene c
 
 ## Capturas de Pantalla
 
-![Captura de Pantalla 1](screenshots/screenshot1.png)
-*Descripción de la captura de pantalla 1.*
+![Landing Page](img/Housea.png) 
+*Página principal de la aplicación, donde podras encontrar*
 
-![Captura de Pantalla 2](screenshots/screenshot2.png)
+![Inicio de la página web](img/Housea_inicio.png)
 *Descripción de la captura de pantalla 2.*
 
 ## Tecnologías Utilizadas
 
-- Frontend: Next.JS, MUI, Flutter.
-- Backend: 
+- Frontend: Next.JS, MUI, Flutter, Vercel.
+- Backend: Aws.
 - Base de Datos: 
 - Otras herramientas: Git para control de versiones.
 
@@ -84,9 +84,12 @@ Bienvenido al repositorio del proyecto de ventas de casas. Este proyecto tiene c
 
 ## Uso
 
-1. Inicia el servidor backend: `npm run start` en el directorio `backend`.
+1. Inicia el servidor backend
+   - Asegurate de tener los archivos en el mismo directorio `app.py` y `arbol.joblib`.
 2. Inicia la aplicación frontend: `npm run start` en el directorio `frontend`.
-3. Abre tu navegador y visita: `http://localhost:3000`.
+3. Abre tu navegador y visita: `https://www.housea.systems/`.
+   - Haz una vista general con la cuenta administrador 
+
 
 ## Contribuciones
 
