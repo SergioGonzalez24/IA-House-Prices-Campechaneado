@@ -12,7 +12,7 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import Dialog from "@mui/material/Dialog";
 import DialogContent from "@mui/material/DialogContent";
-import { lista_proy } from "@/app/layout";
+import { lista_proy } from "@/app/page";
 import { useRouter } from "next/navigation"
 
 export default function UploadProyects() {
@@ -459,6 +459,7 @@ export default function UploadProyects() {
   };
 
   return (
+    <lista_proy.Provider value={proyectos}>
     <Paper elevation={3} sx={{ margin: "20px", padding: "20px", zIndex: -1 }}>
       <Grid container spacing={2} justifyContent="center">
         {/* Sección de indicador de paso */}
@@ -658,5 +659,6 @@ export default function UploadProyects() {
         </Grid>
       </Grid>
     </Paper>
+    </lista_proy.Provider>
   );
 }
